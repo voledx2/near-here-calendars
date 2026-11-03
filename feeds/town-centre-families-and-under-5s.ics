@@ -1,0 +1,59 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Near Here//Builder v0.2//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Near Here - Town centre - Families and under 5s
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:newquay-library-story-time-stories-rhymes-and-crafts-tu@near-here
+DTSTAMP:20261103T195130Z
+SUMMARY:Story-Time (stories\, rhymes and crafts)
+DTSTART;TZID=Europe/London:20261110T100000
+DTEND;TZID=Europe/London:20261110T103000
+RRULE:FREQ=WEEKLY;BYDAY=TU
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
+ oin: Just turn up\nThe source doesn't say whether this runs in school holi
+ days. Check with the venue.\nSource: https://www.cornwall.gov.uk/libraries
+ -museums-and-archives/libraries/your-local-library/newquay-library-and-inf
+ ormation-service/\nLast checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-rhyme-time-songs-and-rhymes-fr@near-here
+DTSTAMP:20261103T195130Z
+SUMMARY:Rhyme Time (songs and rhymes)
+DTSTART;TZID=Europe/London:20261106T103000
+DTEND;TZID=Europe/London:20261106T110000
+RRULE:FREQ=WEEKLY;BYDAY=FR
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
+ oin: Just turn up\nThe source doesn't say whether this runs in school holi
+ days. Check with the venue.\nSource: https://www.cornwall.gov.uk/libraries
+ -museums-and-archives/libraries/your-local-library/newquay-library-and-inf
+ ormation-service/\nLast checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+END:VCALENDAR
