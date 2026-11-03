@@ -1,0 +1,57 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Near Here//Builder v0.2//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Near Here - Town centre - Everyone
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:newquay-library-chess-club-free-tuition-sa@near-here
+DTSTAMP:20261103T195130Z
+SUMMARY:Chess Club (free tuition)
+DTSTART;TZID=Europe/London:20261107T100000
+DTEND;TZID=Europe/London:20261107T120000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ Source: https://www.cornwall.gov.uk/libraries-museums-and-archives/librari
+ es/your-local-library/newquay-library-and-information-service/\nLast check
+ ed: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-board-games-sa@near-here
+DTSTAMP:20261103T195130Z
+SUMMARY:Board games
+DTSTART;TZID=Europe/London:20261107T100000
+DTEND;TZID=Europe/London:20261107T160000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ Source: https://www.cornwall.gov.uk/libraries-museums-and-archives/librari
+ es/your-local-library/newquay-library-and-information-service/\nLast check
+ ed: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+END:VCALENDAR
