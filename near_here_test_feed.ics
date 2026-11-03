@@ -1,0 +1,67 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Near Here//Calendar track test feed//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Near Here TEST - Newquay town centre
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:chess-club-newquay-library@near-here-test
+DTSTAMP:20261028T184052Z
+SUMMARY:Chess club (all ages\, free)
+DTSTART;TZID=Europe/London:20261031T100000
+DTEND;TZID=Europe/London:20261031T120000
+RRULE:FREQ=WEEKLY;BYDAY=SA
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:Free chess club with free tuition. Just turn up. Source: Newquay Library webpage. Last checked 28 Oct 2026.
+END:VEVENT
+BEGIN:VEVENT
+UID:test-term-time-tuesday@near-here-test
+DTSTAMP:20261028T184052Z
+SUMMARY:TEST - term-time weekly session
+DTSTART;TZID=Europe/London:20261103T100000
+DTEND;TZID=Europe/London:20261103T103000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20261215T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:TEST EVENT for platform checks. Checks that a series stops on an end date. The end date is a placeholder\, not a real term date.
+END:VEVENT
+BEGIN:VEVENT
+UID:test-every-other-wednesday@near-here-test
+DTSTAMP:20261028T184052Z
+SUMMARY:TEST - every other Wednesday
+DTSTART;TZID=Europe/London:20261104T140000
+DTEND;TZID=Europe/London:20261104T160000
+RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=WE
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:TEST EVENT for platform checks. Should appear every second week only.
+END:VEVENT
+BEGIN:VEVENT
+UID:test-last-friday@near-here-test
+DTSTAMP:20261028T184052Z
+SUMMARY:TEST - last Friday of the month
+DTSTART;TZID=Europe/London:20261127T140000
+DTEND;TZID=Europe/London:20261127T153000
+RRULE:FREQ=MONTHLY;BYDAY=-1FR
+LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DESCRIPTION:TEST EVENT for platform checks. Should appear on the last Friday of each month only.
+END:VEVENT
+END:VCALENDAR
