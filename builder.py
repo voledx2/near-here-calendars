@@ -1,5 +1,5 @@
 """
-Near Here calendars - builder script v0.3.1 (Week 6)
+Near Here calendars - builder script v0.3.2 (Week 6)
 
 Reads the Timetable Sheet (a local .xlsx file, or the Google Sheet's
 "Publish to web" .xlsx link), checks every row, sets problem rows aside,
@@ -22,6 +22,9 @@ New in v0.3 (Week 6):
   - venues must have a zone; venue postcodes are checked with postcodes.io
   - one set of feeds per zone, plus problems.html for the team
   - v0.3.1: monthly rules written as BYDAY=1FR / -1FR, which Google Calendar reads
+  - v0.3.2: every series has an end date (end of the school year in the Term dates
+    tab, or at least six months ahead). Google Calendar would not load the 28-session
+    feed while most sessions repeated with no end. The nightly build moves it forward.
 """
 import csv
 import html
@@ -52,6 +55,7 @@ PATTERN = {  # dropdown wording -> calendar rule (before BYDAY)
 FIRST_DATE = "First date (every 2 weeks only)"
 REQUIRED = ["Session name", "Venue", "Day", "Start", "End", "How often", "Term-time only", "Audience", "Source link"]
 STALE_DAYS = 60
+MIN_HORIZON_DAYS = 183  # series always run at least this far ahead of the build date
 TIME_RE = re.compile(r"^([01]\d|2[0-3]):([0-5]\d)$")
 POSTCODE_RE = re.compile(r"^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$", re.I)
 SITE = "https://voledx2.github.io/near-here-calendars/"
@@ -222,7 +226,7 @@ def check(rows, venues, term_parts, today):
     return ready, problems
 
 
-def vevents(r, venue, term_parts, build_date, stamp):
+def vevents(r, venue, term_parts, build_date, stamp, horizon):
     """One VEVENT per session, or one per term part for term-time sessions."""
     day, rule0 = r["Day"], PATTERN[r["How often"]]
     if "BYSETPOS=" in rule0:
@@ -236,7 +240,7 @@ def vevents(r, venue, term_parts, build_date, stamp):
     start_t, end_t = as_time(r["Start"]).replace(":", "") + "00", as_time(r["End"]).replace(":", "") + "00"
     exdates = [as_date(p.strip()) for p in str(r.get("Cancelled dates") or "").split(",") if p.strip()]
     # Keep each term part's position in the full list, so calendar IDs stay the same night after night.
-    windows = [(0, max(build_date, anchor or build_date), None)]
+    windows = [(0, max(build_date, anchor or build_date), horizon)]
     if r["Term-time only"] == "Yes":
         windows = [(i, max(a, build_date), b) for i, (a, b) in enumerate(term_parts) if b >= build_date]
     location = ", ".join(x for x in (venue["name"], venue.get("address"), venue.get("postcode")) if x)
@@ -252,8 +256,9 @@ def vevents(r, venue, term_parts, build_date, stamp):
         first = first_on_or_after(a, day, rule0, anchor)
         if first is None or (b and first > b):
             continue
-        uid = f"{slug(r['Venue'])}-{slug(r['Session name'])}-{DAY_CODE[day].lower()}{('-t' + str(i + 1)) if b else ''}@near-here"
-        rr = rule + (f";UNTIL={b.strftime('%Y%m%d')}T235959Z" if b else "")
+        term = r["Term-time only"] == "Yes"
+        uid = f"{slug(r['Venue'])}-{slug(r['Session name'])}-{DAY_CODE[day].lower()}{('-t' + str(i + 1)) if term else ''}@near-here"
+        rr = rule + f";UNTIL={b.strftime('%Y%m%d')}T235959Z"
         lines = ["BEGIN:VEVENT", f"UID:{uid}", f"DTSTAMP:{stamp}",
                  f"SUMMARY:{ics_escape(r['Session name'])}",
                  f"DTSTART;TZID={TZ}:{first.strftime('%Y%m%d')}T{start_t}",
@@ -288,7 +293,7 @@ END:VTIMEZONE""".split("\n")
 
 
 def write_feed(path, title, events):
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.3.1//EN", "CALSCALE:GREGORIAN",
+    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.3.2//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{ics_escape(title)}", f"X-WR-TIMEZONE:{TZ}",
              "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H"] + VTIMEZONE
     for ev in events:
@@ -324,6 +329,8 @@ def main():
                   if as_date(t.get("Starts")) and as_date(t.get("Ends"))]
 
     ready, problems = check(rows, venues, term_parts, build_date)
+    # Every series needs an end date: the end of the school year, or at least six months ahead.
+    horizon = max([b for _, b in term_parts] + [build_date + timedelta(days=MIN_HORIZON_DAYS)])
 
     # Venue warnings (don't block publishing, but the team should fix them before Week 7's postcode finder)
     warnings = []
@@ -342,7 +349,7 @@ def main():
     feeds = {}  # (zone, audience) -> events
     for _, r in ready:
         v = venues[r["Venue"]]
-        evs = vevents(r, v, term_parts, build_date, stamp)
+        evs = vevents(r, v, term_parts, build_date, stamp, horizon)
         for key in ((v["zone"], "Everything"), (v["zone"], r["Audience"])):
             feeds.setdefault(key, []).extend(evs)
 
@@ -373,7 +380,8 @@ def main():
     sources = len({r.get("Source link") for r in active if r.get("Source link")})
     zones_live = sorted({z for z, _, _, _ in written})
     summary = [
-        f"Near Here builder v0.3.1 - build date {build_date.isoformat()}",
+        f"Near Here builder v0.3.2 - build date {build_date.isoformat()}",
+        f"Calendars run until: {horizon.strftime('%d %b %Y')}",
         f"Sessions in the sheet (not paused): {len(active)} from {sources} sources",
         f"Published to calendars: {len(ready)}",
         f"Held back for fixing: {len(blocked_rows)} ({len(problems)} problems)",
