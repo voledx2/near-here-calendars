@@ -1,5 +1,5 @@
 """
-Near Here calendars - builder script v0.3 (Week 6)
+Near Here calendars - builder script v0.3.1 (Week 6)
 
 Reads the Timetable Sheet (a local .xlsx file, or the Google Sheet's
 "Publish to web" .xlsx link), checks every row, sets problem rows aside,
@@ -21,6 +21,7 @@ New in v0.3 (Week 6):
     rows are not duplicates)
   - venues must have a zone; venue postcodes are checked with postcodes.io
   - one set of feeds per zone, plus problems.html for the team
+  - v0.3.1: monthly rules written as BYDAY=1FR / -1FR, which Google Calendar reads
 """
 import csv
 import html
@@ -224,7 +225,13 @@ def check(rows, venues, term_parts, today):
 def vevents(r, venue, term_parts, build_date, stamp):
     """One VEVENT per session, or one per term part for term-time sessions."""
     day, rule0 = r["Day"], PATTERN[r["How often"]]
-    rule = f"{rule0};BYDAY={DAY_CODE[day]}"
+    if "BYSETPOS=" in rule0:
+        # Write monthly rules as e.g. BYDAY=1FR or BYDAY=-1FR. Google Calendar did not
+        # load feeds that used BYSETPOS (found in the Week 6 Android test).
+        pos = rule0.split("BYSETPOS=")[1]
+        rule = f"FREQ=MONTHLY;BYDAY={pos}{DAY_CODE[day]}"
+    else:
+        rule = f"{rule0};BYDAY={DAY_CODE[day]}"
     anchor = as_date(r.get(FIRST_DATE))
     start_t, end_t = as_time(r["Start"]).replace(":", "") + "00", as_time(r["End"]).replace(":", "") + "00"
     exdates = [as_date(p.strip()) for p in str(r.get("Cancelled dates") or "").split(",") if p.strip()]
@@ -281,7 +288,7 @@ END:VTIMEZONE""".split("\n")
 
 
 def write_feed(path, title, events):
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.3//EN", "CALSCALE:GREGORIAN",
+    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.3.1//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{ics_escape(title)}", f"X-WR-TIMEZONE:{TZ}",
              "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H"] + VTIMEZONE
     for ev in events:
@@ -366,7 +373,7 @@ def main():
     sources = len({r.get("Source link") for r in active if r.get("Source link")})
     zones_live = sorted({z for z, _, _, _ in written})
     summary = [
-        f"Near Here builder v0.3 - build date {build_date.isoformat()}",
+        f"Near Here builder v0.3.1 - build date {build_date.isoformat()}",
         f"Sessions in the sheet (not paused): {len(active)} from {sources} sources",
         f"Published to calendars: {len(ready)}",
         f"Held back for fixing: {len(blocked_rows)} ({len(problems)} problems)",
