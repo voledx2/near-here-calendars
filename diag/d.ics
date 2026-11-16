@@ -1,0 +1,257 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Near Here//Builder v0.3.1//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:DIAG D - events 15-28
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:newquay-library-u3a-chess-3rd-friday-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Chess (3rd Friday)
+DTSTART;TZID=Europe/London:20261120T123000
+DTEND;TZID=Europe/London:20261120T143000
+RRULE:FREQ=MONTHLY;BYDAY=3FR
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
+ Book ahead\nThe source doesn't say whether this runs in school holidays. C
+ heck with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-sch
+ edule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-fort-inn-u3a-sunday-lunch-su@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Sunday Lunch
+DTSTART;TZID=Europe/London:20261220T120000
+DTEND;TZID=Europe/London:20261220T140000
+RRULE:FREQ=MONTHLY;BYDAY=3SU
+LOCATION:The Fort Inn\, 63 Fore Street\, Newquay\, TR7 1HA
+DESCRIPTION:Who it's for: Older people\nCost: Pay for own meal\nHow to join
+ : Book ahead\nThe source doesn't say whether this runs in school holidays.
+  Check with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-s
+ chedule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-technology-and-tea-tu@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Technology and Tea
+DTSTART;TZID=Europe/London:20261117T100000
+DTEND;TZID=Europe/London:20261117T110000
+RRULE:FREQ=WEEKLY;BYDAY=TU
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-knit-and-natter-tu@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Knit and Natter
+DTSTART;TZID=Europe/London:20261117T130000
+DTEND;TZID=Europe/London:20261117T143000
+RRULE:FREQ=WEEKLY;BYDAY=TU
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-memory-hub-th@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Memory Hub
+DTSTART;TZID=Europe/London:20261119T100000
+DTEND;TZID=Europe/London:20261119T113000
+RRULE:FREQ=WEEKLY;BYDAY=TH
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-friday-club-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Friday Club
+DTSTART;TZID=Europe/London:20261120T100000
+DTEND;TZID=Europe/London:20261120T140000
+RRULE:FREQ=WEEKLY;BYDAY=FR
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £11 plus refreshments\nHow t
+ o join: Not stated\nThe source doesn't say whether this runs in school hol
+ idays. Check with the venue.\nSource: https://www.ageuk.org.uk/bp-assets/g
+ lobalassets/cornwall--the-isles-of-scilly/original-blocks/about-us/latest-
+ news/2025---govenek-launches-new-sessions-and-activities/govenek-hub-activ
+ ities-timetable-v04-22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-happy-voices-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Happy Voices
+DTSTART;TZID=Europe/London:20261120T130000
+DTEND;TZID=Europe/London:20261120T140000
+RRULE:FREQ=WEEKLY;BYDAY=FR
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:st-michael-the-archangel-church-newquay-foodbank-st-michael-s-fr@near-h
+ ere
+DTSTAMP:20261116T171943Z
+SUMMARY:Newquay Foodbank (St Michael's)
+DTSTART;TZID=Europe/London:20261120T113000
+DTEND;TZID=Europe/London:20261120T140000
+RRULE:FREQ=WEEKLY;BYDAY=FR
+LOCATION:St Michael the Archangel Church\, St Michael's Road\, Newquay\, TR
+ 7 1RA
+DESCRIPTION:Who it's for: Everyone\nCost: Free (voucher needed)\nHow to joi
+ n: Referral needed\nThe source doesn't say whether this runs in school hol
+ idays. Check with the venue.\nSource: https://newquay.foodbank.org.uk/loca
+ tions/\nLast checked: 16 Nov 2026
+URL:https://newquay.foodbank.org.uk/locations/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-elevate-youth-theatre-mo@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Elevate Youth Theatre
+DTSTART;TZID=Europe/London:20261116T161500
+DTEND;TZID=Europe/London:20261116T181500
+RRULE:FREQ=WEEKLY;BYDAY=MO
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Children and teens\nCost: Not stated\nHow to join
+ : Not stated\nThe source doesn't say whether this runs in school holidays.
+  Check with the venue.\nSource: https://newquaymethodist.org/\nLast checke
+ d: 16 Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-georgia-s-voice-mental-health-suppor
+ t-group-mo@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Georgia's Voice (mental health support group)
+DTSTART;TZID=Europe/London:20261116T183000
+DTEND;TZID=Europe/London:20261116T200000
+RRULE:FREQ=WEEKLY;BYDAY=MO
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Adults\nCost: Not stated\nHow to join: Not stated
+ \nThe source doesn't say whether this runs in school holidays. Check with 
+ the venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 20
+ 26
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-community-showers-tuesday-tu@near-he
+ re
+DTSTAMP:20261116T171943Z
+SUMMARY:Community Showers (Tuesday)
+DTSTART;TZID=Europe/London:20261117T140000
+DTEND;TZID=Europe/London:20261117T150000
+RRULE:FREQ=WEEKLY;BYDAY=TU
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ The source doesn't say whether this runs in school holidays. Check with th
+ e venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-community-showers-thursday-th@near-h
+ ere
+DTSTAMP:20261116T171943Z
+SUMMARY:Community Showers (Thursday)
+DTSTART;TZID=Europe/London:20261119T113000
+DTEND;TZID=Europe/London:20261119T123000
+RRULE:FREQ=WEEKLY;BYDAY=TH
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ The source doesn't say whether this runs in school holidays. Check with th
+ e venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-memory-cafe-th@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Memory Cafe
+DTSTART;TZID=Europe/London:20261119T140000
+DTEND;TZID=Europe/London:20261119T160000
+RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=TH
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Older people\nCost: Not stated\nHow to join: Not 
+ stated\nThe source doesn't say whether this runs in school holidays. Check
+  with the venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 
+ Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-fellowship-friday-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Fellowship Friday
+DTSTART;TZID=Europe/London:20261211T190000
+DTEND;TZID=Europe/London:20261211T210000
+RRULE:FREQ=MONTHLY;BYDAY=2FR
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Everyone\nCost: Not stated\nHow to join: Not stat
+ ed\nThe source doesn't say whether this runs in school holidays. Check wit
+ h the venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 
+ 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+END:VCALENDAR
