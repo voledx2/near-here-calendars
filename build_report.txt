@@ -1,4 +1,4 @@
-Near Here builder v0.3 - build date 2026-11-16
+Near Here builder v0.3.1 - build date 2026-11-16
 Sessions in the sheet (not paused): 41 from 5 sources
 Published to calendars: 27
 Held back for fixing: 14 (15 problems)

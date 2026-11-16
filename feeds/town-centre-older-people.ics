@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.3//EN
+PRODID:-//Near Here//Builder v0.3.1//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Town centre - Older people
@@ -26,11 +26,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-u3a-book-club-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Book Club
 DTSTART;TZID=Europe/London:20261127T143000
 DTEND;TZID=Europe/London:20261127T153000
-RRULE:FREQ=MONTHLY;BYSETPOS=-1;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=-1FR
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
  Book ahead\nThe source doesn't say whether this runs in school holidays. C
@@ -40,7 +40,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:sandy-lodge-hotel-u3a-bridge-friday-evening-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Bridge (Friday evening)
 DTSTART;TZID=Europe/London:20261120T183000
 DTEND;TZID=Europe/London:20261120T203000
@@ -54,11 +54,11 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-chess-1st-friday-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Chess (1st Friday)
 DTSTART;TZID=Europe/London:20261204T123000
 DTEND;TZID=Europe/London:20261204T143000
-RRULE:FREQ=MONTHLY;BYSETPOS=1;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=1FR
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
  Book ahead\nThe source doesn't say whether this runs in school holidays. C
@@ -68,11 +68,11 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-chess-3rd-friday-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Chess (3rd Friday)
 DTSTART;TZID=Europe/London:20261120T123000
 DTEND;TZID=Europe/London:20261120T143000
-RRULE:FREQ=MONTHLY;BYSETPOS=3;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=3FR
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
  Book ahead\nThe source doesn't say whether this runs in school holidays. C
@@ -82,11 +82,11 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-fort-inn-u3a-sunday-lunch-su@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Sunday Lunch
 DTSTART;TZID=Europe/London:20261220T120000
 DTEND;TZID=Europe/London:20261220T140000
-RRULE:FREQ=MONTHLY;BYSETPOS=3;BYDAY=SU
+RRULE:FREQ=MONTHLY;BYDAY=3SU
 LOCATION:The Fort Inn\, 63 Fore Street\, Newquay\, TR7 1HA
 DESCRIPTION:Who it's for: Older people\nCost: Pay for own meal\nHow to join
  : Book ahead\nThe source doesn't say whether this runs in school holidays.
@@ -96,7 +96,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-technology-and-tea-tu@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Technology and Tea
 DTSTART;TZID=Europe/London:20261117T100000
 DTEND;TZID=Europe/London:20261117T110000
@@ -115,7 +115,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-knit-and-natter-tu@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Knit and Natter
 DTSTART;TZID=Europe/London:20261117T130000
 DTEND;TZID=Europe/London:20261117T143000
@@ -134,7 +134,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-memory-hub-th@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Memory Hub
 DTSTART;TZID=Europe/London:20261119T100000
 DTEND;TZID=Europe/London:20261119T113000
@@ -153,7 +153,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-friday-club-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Friday Club
 DTSTART;TZID=Europe/London:20261120T100000
 DTEND;TZID=Europe/London:20261120T140000
@@ -172,7 +172,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-happy-voices-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Happy Voices
 DTSTART;TZID=Europe/London:20261120T130000
 DTEND;TZID=Europe/London:20261120T140000
@@ -191,7 +191,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-memory-cafe-th@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Memory Cafe
 DTSTART;TZID=Europe/London:20261119T140000
 DTEND;TZID=Europe/London:20261119T160000

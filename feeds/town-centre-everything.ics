@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.3//EN
+PRODID:-//Near Here//Builder v0.3.1//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Town centre - Everything
@@ -26,7 +26,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-story-time-stories-rhymes-and-crafts-tu@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Story-Time (stories\, rhymes and crafts)
 DTSTART;TZID=Europe/London:20261117T100000
 DTEND;TZID=Europe/London:20261117T103000
@@ -42,7 +42,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-tu@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Lego Club (4-11 years)
 DTSTART;TZID=Europe/London:20261117T153000
 DTEND;TZID=Europe/London:20261117T163000
@@ -58,7 +58,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-rhyme-time-songs-and-rhymes-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Rhyme Time (songs and rhymes)
 DTSTART;TZID=Europe/London:20261120T103000
 DTEND;TZID=Europe/London:20261120T110000
@@ -74,7 +74,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-chess-club-free-tuition-sa@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Chess Club (free tuition)
 DTSTART;TZID=Europe/London:20261121T100000
 DTEND;TZID=Europe/London:20261121T120000
@@ -89,7 +89,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-board-games-sa@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Board games
 DTSTART;TZID=Europe/London:20261121T100000
 DTEND;TZID=Europe/London:20261121T160000
@@ -104,7 +104,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-crochet-club-12-years-plus-sa@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Crochet Club (12 years plus)
 DTSTART;TZID=Europe/London:20261121T150000
 DTEND;TZID=Europe/London:20261121T160000
@@ -119,7 +119,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t2@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20261121T140000
 DTEND;TZID=Europe/London:20261121T150000
@@ -134,7 +134,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t3@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270109T140000
 DTEND;TZID=Europe/London:20270109T150000
@@ -149,7 +149,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t4@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270227T140000
 DTEND;TZID=Europe/London:20270227T150000
@@ -164,7 +164,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t5@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270417T140000
 DTEND;TZID=Europe/London:20270417T150000
@@ -179,7 +179,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t6@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270612T140000
 DTEND;TZID=Europe/London:20270612T150000
@@ -194,11 +194,11 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-book-club-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Book Club
 DTSTART;TZID=Europe/London:20261127T143000
 DTEND;TZID=Europe/London:20261127T153000
-RRULE:FREQ=MONTHLY;BYSETPOS=-1;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=-1FR
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
  Book ahead\nThe source doesn't say whether this runs in school holidays. C
@@ -208,7 +208,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:sandy-lodge-hotel-u3a-bridge-friday-evening-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Bridge (Friday evening)
 DTSTART;TZID=Europe/London:20261120T183000
 DTEND;TZID=Europe/London:20261120T203000
@@ -222,11 +222,11 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-chess-1st-friday-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Chess (1st Friday)
 DTSTART;TZID=Europe/London:20261204T123000
 DTEND;TZID=Europe/London:20261204T143000
-RRULE:FREQ=MONTHLY;BYSETPOS=1;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=1FR
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
  Book ahead\nThe source doesn't say whether this runs in school holidays. C
@@ -236,11 +236,11 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-chess-3rd-friday-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Chess (3rd Friday)
 DTSTART;TZID=Europe/London:20261120T123000
 DTEND;TZID=Europe/London:20261120T143000
-RRULE:FREQ=MONTHLY;BYSETPOS=3;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=3FR
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
  Book ahead\nThe source doesn't say whether this runs in school holidays. C
@@ -250,11 +250,11 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-fort-inn-u3a-sunday-lunch-su@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:u3a Sunday Lunch
 DTSTART;TZID=Europe/London:20261220T120000
 DTEND;TZID=Europe/London:20261220T140000
-RRULE:FREQ=MONTHLY;BYSETPOS=3;BYDAY=SU
+RRULE:FREQ=MONTHLY;BYDAY=3SU
 LOCATION:The Fort Inn\, 63 Fore Street\, Newquay\, TR7 1HA
 DESCRIPTION:Who it's for: Older people\nCost: Pay for own meal\nHow to join
  : Book ahead\nThe source doesn't say whether this runs in school holidays.
@@ -264,7 +264,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-technology-and-tea-tu@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Technology and Tea
 DTSTART;TZID=Europe/London:20261117T100000
 DTEND;TZID=Europe/London:20261117T110000
@@ -283,7 +283,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-knit-and-natter-tu@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Knit and Natter
 DTSTART;TZID=Europe/London:20261117T130000
 DTEND;TZID=Europe/London:20261117T143000
@@ -302,7 +302,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-memory-hub-th@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Memory Hub
 DTSTART;TZID=Europe/London:20261119T100000
 DTEND;TZID=Europe/London:20261119T113000
@@ -321,7 +321,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-friday-club-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Friday Club
 DTSTART;TZID=Europe/London:20261120T100000
 DTEND;TZID=Europe/London:20261120T140000
@@ -340,7 +340,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-happy-voices-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Happy Voices
 DTSTART;TZID=Europe/London:20261120T130000
 DTEND;TZID=Europe/London:20261120T140000
@@ -360,7 +360,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:st-michael-the-archangel-church-newquay-foodbank-st-michael-s-fr@near-h
  ere
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Newquay Foodbank (St Michael's)
 DTSTART;TZID=Europe/London:20261120T113000
 DTEND;TZID=Europe/London:20261120T140000
@@ -375,7 +375,7 @@ URL:https://newquay.foodbank.org.uk/locations/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-elevate-youth-theatre-mo@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Elevate Youth Theatre
 DTSTART;TZID=Europe/London:20261116T161500
 DTEND;TZID=Europe/London:20261116T181500
@@ -391,7 +391,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-georgia-s-voice-mental-health-suppor
  t-group-mo@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Georgia's Voice (mental health support group)
 DTSTART;TZID=Europe/London:20261116T183000
 DTEND;TZID=Europe/London:20261116T200000
@@ -407,7 +407,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-community-showers-tuesday-tu@near-he
  re
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Community Showers (Tuesday)
 DTSTART;TZID=Europe/London:20261117T140000
 DTEND;TZID=Europe/London:20261117T150000
@@ -422,7 +422,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-community-showers-thursday-th@near-h
  ere
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Community Showers (Thursday)
 DTSTART;TZID=Europe/London:20261119T113000
 DTEND;TZID=Europe/London:20261119T123000
@@ -436,7 +436,7 @@ URL:https://newquaymethodist.org/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-memory-cafe-th@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Memory Cafe
 DTSTART;TZID=Europe/London:20261119T140000
 DTEND;TZID=Europe/London:20261119T160000
@@ -451,11 +451,11 @@ URL:https://newquaymethodist.org/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-fellowship-friday-fr@near-here
-DTSTAMP:20261116T133103Z
+DTSTAMP:20261116T171943Z
 SUMMARY:Fellowship Friday
 DTSTART;TZID=Europe/London:20261211T190000
 DTEND;TZID=Europe/London:20261211T210000
-RRULE:FREQ=MONTHLY;BYSETPOS=2;BYDAY=FR
+RRULE:FREQ=MONTHLY;BYDAY=2FR
 LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
  , TR7 1RW
 DESCRIPTION:Who it's for: Everyone\nCost: Not stated\nHow to join: Not stat
