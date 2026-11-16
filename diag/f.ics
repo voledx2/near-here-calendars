@@ -1,0 +1,467 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Near Here//Builder v0.3.1//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:DIAG F - all 28 with end date
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:newquay-library-story-time-stories-rhymes-and-crafts-tu@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Story-Time (stories\, rhymes and crafts)
+DTSTART;TZID=Europe/London:20261117T100000
+DTEND;TZID=Europe/London:20261117T103000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
+ oin: Just turn up\nThe source doesn't say whether this runs in school holi
+ days. Check with the venue.\nSource: https://www.cornwall.gov.uk/libraries
+ -museums-and-archives/libraries/your-local-library/newquay-library-and-inf
+ ormation-service/\nLast checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-tu@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Lego Club (4-11 years)
+DTSTART;TZID=Europe/London:20261117T153000
+DTEND;TZID=Europe/London:20261117T163000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Not stated\nHow to join
+ : Just turn up\nThe source doesn't say whether this runs in school holiday
+ s. Check with the venue.\nSource: https://www.cornwall.gov.uk/libraries-mu
+ seums-and-archives/libraries/your-local-library/newquay-library-and-inform
+ ation-service/\nLast checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-rhyme-time-songs-and-rhymes-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Rhyme Time (songs and rhymes)
+DTSTART;TZID=Europe/London:20261120T103000
+DTEND;TZID=Europe/London:20261120T110000
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
+ oin: Just turn up\nThe source doesn't say whether this runs in school holi
+ days. Check with the venue.\nSource: https://www.cornwall.gov.uk/libraries
+ -museums-and-archives/libraries/your-local-library/newquay-library-and-inf
+ ormation-service/\nLast checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-chess-club-free-tuition-sa@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Chess Club (free tuition)
+DTSTART;TZID=Europe/London:20261121T100000
+DTEND;TZID=Europe/London:20261121T120000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ Source: https://www.cornwall.gov.uk/libraries-museums-and-archives/librari
+ es/your-local-library/newquay-library-and-information-service/\nLast check
+ ed: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-board-games-sa@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Board games
+DTSTART;TZID=Europe/London:20261121T100000
+DTEND;TZID=Europe/London:20261121T160000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ Source: https://www.cornwall.gov.uk/libraries-museums-and-archives/librari
+ es/your-local-library/newquay-library-and-information-service/\nLast check
+ ed: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-crochet-club-12-years-plus-sa@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Crochet Club (12 years plus)
+DTSTART;TZID=Europe/London:20261121T150000
+DTEND;TZID=Europe/London:20261121T160000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Teens and adults\nCost: Free\nHow to join: Just t
+ urn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archives
+ /libraries/your-local-library/newquay-library-and-information-service/\nLa
+ st checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-saturday-sa-t2@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Lego Club (4-11 years\, Saturday)
+DTSTART;TZID=Europe/London:20261121T140000
+DTEND;TZID=Europe/London:20261121T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20261218T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
+  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
+ es/libraries/your-local-library/newquay-library-and-information-service/\n
+ Last checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-saturday-sa-t3@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Lego Club (4-11 years\, Saturday)
+DTSTART;TZID=Europe/London:20270109T140000
+DTEND;TZID=Europe/London:20270109T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270212T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
+  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
+ es/libraries/your-local-library/newquay-library-and-information-service/\n
+ Last checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-saturday-sa-t4@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Lego Club (4-11 years\, Saturday)
+DTSTART;TZID=Europe/London:20270227T140000
+DTEND;TZID=Europe/London:20270227T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270325T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
+  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
+ es/libraries/your-local-library/newquay-library-and-information-service/\n
+ Last checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-saturday-sa-t5@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Lego Club (4-11 years\, Saturday)
+DTSTART;TZID=Europe/London:20270417T140000
+DTEND;TZID=Europe/London:20270417T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270528T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
+  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
+ es/libraries/your-local-library/newquay-library-and-information-service/\n
+ Last checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-saturday-sa-t6@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Lego Club (4-11 years\, Saturday)
+DTSTART;TZID=Europe/London:20270612T140000
+DTEND;TZID=Europe/London:20270612T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
+  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
+ es/libraries/your-local-library/newquay-library-and-information-service/\n
+ Last checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-u3a-book-club-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Book Club
+DTSTART;TZID=Europe/London:20261127T143000
+DTEND;TZID=Europe/London:20261127T153000
+RRULE:FREQ=MONTHLY;BYDAY=-1FR;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
+ Book ahead\nThe source doesn't say whether this runs in school holidays. C
+ heck with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-sch
+ edule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:sandy-lodge-hotel-u3a-bridge-friday-evening-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Bridge (Friday evening)
+DTSTART;TZID=Europe/London:20261120T183000
+DTEND;TZID=Europe/London:20261120T203000
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270731T235959Z
+LOCATION:Sandy Lodge Hotel\, 6-8 Hilgrove Road\, Newquay\, TR7 2QY
+DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
+ Book ahead\nThe source doesn't say whether this runs in school holidays. C
+ heck with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-sch
+ edule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-u3a-chess-1st-friday-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Chess (1st Friday)
+DTSTART;TZID=Europe/London:20261204T123000
+DTEND;TZID=Europe/London:20261204T143000
+RRULE:FREQ=MONTHLY;BYDAY=1FR;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
+ Book ahead\nThe source doesn't say whether this runs in school holidays. C
+ heck with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-sch
+ edule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-u3a-chess-3rd-friday-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Chess (3rd Friday)
+DTSTART;TZID=Europe/London:20261120T123000
+DTEND;TZID=Europe/London:20261120T143000
+RRULE:FREQ=MONTHLY;BYDAY=3FR;UNTIL=20270731T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 
+ Book ahead\nThe source doesn't say whether this runs in school holidays. C
+ heck with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-sch
+ edule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-fort-inn-u3a-sunday-lunch-su@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:u3a Sunday Lunch
+DTSTART;TZID=Europe/London:20261220T120000
+DTEND;TZID=Europe/London:20261220T140000
+RRULE:FREQ=MONTHLY;BYDAY=3SU;UNTIL=20270731T235959Z
+LOCATION:The Fort Inn\, 63 Fore Street\, Newquay\, TR7 1HA
+DESCRIPTION:Who it's for: Older people\nCost: Pay for own meal\nHow to join
+ : Book ahead\nThe source doesn't say whether this runs in school holidays.
+  Check with the venue.\nSource: https://newquay.u3asite.uk/groups-weekly-s
+ chedule/\nLast checked: 16 Nov 2026
+URL:https://newquay.u3asite.uk/groups-weekly-schedule/
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-technology-and-tea-tu@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Technology and Tea
+DTSTART;TZID=Europe/London:20261117T100000
+DTEND;TZID=Europe/London:20261117T110000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270731T235959Z
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-knit-and-natter-tu@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Knit and Natter
+DTSTART;TZID=Europe/London:20261117T130000
+DTEND;TZID=Europe/London:20261117T143000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270731T235959Z
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-memory-hub-th@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Memory Hub
+DTSTART;TZID=Europe/London:20261119T100000
+DTEND;TZID=Europe/London:20261119T113000
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20270731T235959Z
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-friday-club-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Friday Club
+DTSTART;TZID=Europe/London:20261120T100000
+DTEND;TZID=Europe/London:20261120T140000
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270731T235959Z
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £11 plus refreshments\nHow t
+ o join: Not stated\nThe source doesn't say whether this runs in school hol
+ idays. Check with the venue.\nSource: https://www.ageuk.org.uk/bp-assets/g
+ lobalassets/cornwall--the-isles-of-scilly/original-blocks/about-us/latest-
+ news/2025---govenek-launches-new-sessions-and-activities/govenek-hub-activ
+ ities-timetable-v04-22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-happy-voices-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Happy Voices
+DTSTART;TZID=Europe/London:20261120T130000
+DTEND;TZID=Europe/London:20261120T140000
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270731T235959Z
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+BEGIN:VEVENT
+UID:st-michael-the-archangel-church-newquay-foodbank-st-michael-s-fr@near-h
+ ere
+DTSTAMP:20261116T171943Z
+SUMMARY:Newquay Foodbank (St Michael's)
+DTSTART;TZID=Europe/London:20261120T113000
+DTEND;TZID=Europe/London:20261120T140000
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270731T235959Z
+LOCATION:St Michael the Archangel Church\, St Michael's Road\, Newquay\, TR
+ 7 1RA
+DESCRIPTION:Who it's for: Everyone\nCost: Free (voucher needed)\nHow to joi
+ n: Referral needed\nThe source doesn't say whether this runs in school hol
+ idays. Check with the venue.\nSource: https://newquay.foodbank.org.uk/loca
+ tions/\nLast checked: 16 Nov 2026
+URL:https://newquay.foodbank.org.uk/locations/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-elevate-youth-theatre-mo@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Elevate Youth Theatre
+DTSTART;TZID=Europe/London:20261116T161500
+DTEND;TZID=Europe/London:20261116T181500
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20270731T235959Z
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Children and teens\nCost: Not stated\nHow to join
+ : Not stated\nThe source doesn't say whether this runs in school holidays.
+  Check with the venue.\nSource: https://newquaymethodist.org/\nLast checke
+ d: 16 Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-georgia-s-voice-mental-health-suppor
+ t-group-mo@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Georgia's Voice (mental health support group)
+DTSTART;TZID=Europe/London:20261116T183000
+DTEND;TZID=Europe/London:20261116T200000
+RRULE:FREQ=WEEKLY;BYDAY=MO;UNTIL=20270731T235959Z
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Adults\nCost: Not stated\nHow to join: Not stated
+ \nThe source doesn't say whether this runs in school holidays. Check with 
+ the venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 20
+ 26
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-community-showers-tuesday-tu@near-he
+ re
+DTSTAMP:20261116T171943Z
+SUMMARY:Community Showers (Tuesday)
+DTSTART;TZID=Europe/London:20261117T140000
+DTEND;TZID=Europe/London:20261117T150000
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270731T235959Z
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ The source doesn't say whether this runs in school holidays. Check with th
+ e venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-community-showers-thursday-th@near-h
+ ere
+DTSTAMP:20261116T171943Z
+SUMMARY:Community Showers (Thursday)
+DTSTART;TZID=Europe/London:20261119T113000
+DTEND;TZID=Europe/London:20261119T123000
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20270731T235959Z
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
+ The source doesn't say whether this runs in school holidays. Check with th
+ e venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-memory-cafe-th@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Memory Cafe
+DTSTART;TZID=Europe/London:20261119T140000
+DTEND;TZID=Europe/London:20261119T160000
+RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=TH;UNTIL=20270731T235959Z
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Older people\nCost: Not stated\nHow to join: Not 
+ stated\nThe source doesn't say whether this runs in school holidays. Check
+  with the venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 
+ Nov 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-fellowship-friday-fr@near-here
+DTSTAMP:20261116T171943Z
+SUMMARY:Fellowship Friday
+DTSTART;TZID=Europe/London:20261211T190000
+DTEND;TZID=Europe/London:20261211T210000
+RRULE:FREQ=MONTHLY;BYDAY=2FR;UNTIL=20270731T235959Z
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Everyone\nCost: Not stated\nHow to join: Not stat
+ ed\nThe source doesn't say whether this runs in school holidays. Check wit
+ h the venue.\nSource: https://newquaymethodist.org/\nLast checked: 16 Nov 
+ 2026
+URL:https://newquaymethodist.org/
+END:VEVENT
+END:VCALENDAR
