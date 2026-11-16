@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.3.1//EN
+PRODID:-//Near Here//Builder v0.3.2//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Town centre - Everyone
@@ -26,11 +26,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-chess-club-free-tuition-sa@near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Chess Club (free tuition)
 DTSTART;TZID=Europe/London:20261121T100000
 DTEND;TZID=Europe/London:20261121T120000
-RRULE:FREQ=WEEKLY;BYDAY=SA
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
  Source: https://www.cornwall.gov.uk/libraries-museums-and-archives/librari
@@ -41,11 +41,11 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-board-games-sa@near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Board games
 DTSTART;TZID=Europe/London:20261121T100000
 DTEND;TZID=Europe/London:20261121T160000
-RRULE:FREQ=WEEKLY;BYDAY=SA
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
  Source: https://www.cornwall.gov.uk/libraries-museums-and-archives/librari
@@ -57,11 +57,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:st-michael-the-archangel-church-newquay-foodbank-st-michael-s-fr@near-h
  ere
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Newquay Foodbank (St Michael's)
 DTSTART;TZID=Europe/London:20261120T113000
 DTEND;TZID=Europe/London:20261120T140000
-RRULE:FREQ=WEEKLY;BYDAY=FR
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270723T235959Z
 LOCATION:St Michael the Archangel Church\, St Michael's Road\, Newquay\, TR
  7 1RA
 DESCRIPTION:Who it's for: Everyone\nCost: Free (voucher needed)\nHow to joi
@@ -73,11 +73,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-community-showers-tuesday-tu@near-he
  re
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Community Showers (Tuesday)
 DTSTART;TZID=Europe/London:20261117T140000
 DTEND;TZID=Europe/London:20261117T150000
-RRULE:FREQ=WEEKLY;BYDAY=TU
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270723T235959Z
 LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
  , TR7 1RW
 DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
@@ -88,11 +88,11 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-community-showers-thursday-th@near-h
  ere
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Community Showers (Thursday)
 DTSTART;TZID=Europe/London:20261119T113000
 DTEND;TZID=Europe/London:20261119T123000
-RRULE:FREQ=WEEKLY;BYDAY=TH
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20270723T235959Z
 LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
  , TR7 1RW
 DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
@@ -102,11 +102,11 @@ URL:https://newquaymethodist.org/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-fellowship-friday-fr@near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Fellowship Friday
 DTSTART;TZID=Europe/London:20261211T190000
 DTEND;TZID=Europe/London:20261211T210000
-RRULE:FREQ=MONTHLY;BYDAY=2FR
+RRULE:FREQ=MONTHLY;BYDAY=2FR;UNTIL=20270723T235959Z
 LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
  , TR7 1RW
 DESCRIPTION:Who it's for: Everyone\nCost: Not stated\nHow to join: Not stat

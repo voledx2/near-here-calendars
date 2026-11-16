@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.3.1//EN
+PRODID:-//Near Here//Builder v0.3.2//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Town centre - Families and under 5s
@@ -26,11 +26,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-story-time-stories-rhymes-and-crafts-tu@near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Story-Time (stories\, rhymes and crafts)
 DTSTART;TZID=Europe/London:20261117T100000
 DTEND;TZID=Europe/London:20261117T103000
-RRULE:FREQ=WEEKLY;BYDAY=TU
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
  oin: Just turn up\nThe source doesn't say whether this runs in school holi
@@ -42,11 +42,11 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-rhyme-time-songs-and-rhymes-fr@near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Rhyme Time (songs and rhymes)
 DTSTART;TZID=Europe/London:20261120T103000
 DTEND;TZID=Europe/London:20261120T110000
-RRULE:FREQ=WEEKLY;BYDAY=FR
+RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
  oin: Just turn up\nThe source doesn't say whether this runs in school holi

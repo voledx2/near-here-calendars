@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.3.1//EN
+PRODID:-//Near Here//Builder v0.3.2//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Town centre - Teens and adults
@@ -26,11 +26,11 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-crochet-club-12-years-plus-sa@near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Crochet Club (12 years plus)
 DTSTART;TZID=Europe/London:20261121T150000
 DTEND;TZID=Europe/London:20261121T160000
-RRULE:FREQ=WEEKLY;BYDAY=SA
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Teens and adults\nCost: Free\nHow to join: Just t
  urn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archives

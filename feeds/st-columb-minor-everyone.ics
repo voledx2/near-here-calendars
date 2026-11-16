@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.3.1//EN
+PRODID:-//Near Here//Builder v0.3.2//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - St Columb Minor - Everyone
@@ -27,11 +27,11 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:st-columba-s-church-st-columb-minor-newquay-foodbank-st-columb-minor-tu
  @near-here
-DTSTAMP:20261116T171943Z
+DTSTAMP:20261116T173604Z
 SUMMARY:Newquay Foodbank (St Columb Minor)
 DTSTART;TZID=Europe/London:20261117T100000
 DTEND;TZID=Europe/London:20261117T120000
-RRULE:FREQ=WEEKLY;BYDAY=TU
+RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270723T235959Z
 LOCATION:St Columba's Church\, St Columb Minor\, St Columb Minor\, Newquay\
  , TR7 3EY
 DESCRIPTION:Who it's for: Everyone\nCost: Free (voucher needed)\nHow to joi
