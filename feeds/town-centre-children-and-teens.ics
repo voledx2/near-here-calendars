@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.2//EN
+PRODID:-//Near Here//Builder v0.3//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Town centre - Children and teens
@@ -26,12 +26,12 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-tu@near-here
-DTSTAMP:20261103T195130Z
+DTSTAMP:20261116T133103Z
 SUMMARY:Lego Club (4-11 years)
-DTSTART;TZID=Europe/London:20261110T153000
-DTEND;TZID=Europe/London:20261110T163000
+DTSTART;TZID=Europe/London:20261117T153000
+DTEND;TZID=Europe/London:20261117T163000
 RRULE:FREQ=WEEKLY;BYDAY=TU
-LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Children and teens\nCost: Not stated\nHow to join
  : Just turn up\nThe source doesn't say whether this runs in school holiday
  s. Check with the venue.\nSource: https://www.cornwall.gov.uk/libraries-mu
@@ -41,28 +41,13 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
  ur-local-library/newquay-library-and-information-service/
 END:VEVENT
 BEGIN:VEVENT
-UID:newquay-library-lego-club-4-11-years-saturday-sa-t1@near-here
-DTSTAMP:20261103T195130Z
-SUMMARY:Lego Club (4-11 years\, Saturday)
-DTSTART;TZID=Europe/London:20261107T140000
-DTEND;TZID=Europe/London:20261107T150000
-RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20261218T235959Z
-LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
-DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
-  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
- es/libraries/your-local-library/newquay-library-and-information-service/\n
- Last checked: 04 Nov 2026
-URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
- ur-local-library/newquay-library-and-information-service/
-END:VEVENT
-BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t2@near-here
-DTSTAMP:20261103T195130Z
+DTSTAMP:20261116T133103Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
-DTSTART;TZID=Europe/London:20270109T140000
-DTEND;TZID=Europe/London:20270109T150000
-RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270212T235959Z
-LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DTSTART;TZID=Europe/London:20261121T140000
+DTEND;TZID=Europe/London:20261121T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20261218T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
   turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
  es/libraries/your-local-library/newquay-library-and-information-service/\n
@@ -72,12 +57,12 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t3@near-here
-DTSTAMP:20261103T195130Z
+DTSTAMP:20261116T133103Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
-DTSTART;TZID=Europe/London:20270227T140000
-DTEND;TZID=Europe/London:20270227T150000
-RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270325T235959Z
-LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DTSTART;TZID=Europe/London:20270109T140000
+DTEND;TZID=Europe/London:20270109T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270212T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
   turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
  es/libraries/your-local-library/newquay-library-and-information-service/\n
@@ -87,12 +72,12 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t4@near-here
-DTSTAMP:20261103T195130Z
+DTSTAMP:20261116T133103Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
-DTSTART;TZID=Europe/London:20270417T140000
-DTEND;TZID=Europe/London:20270417T150000
-RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270528T235959Z
-LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DTSTART;TZID=Europe/London:20270227T140000
+DTEND;TZID=Europe/London:20270227T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270325T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
   turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
  es/libraries/your-local-library/newquay-library-and-information-service/\n
@@ -102,17 +87,47 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t5@near-here
-DTSTAMP:20261103T195130Z
+DTSTAMP:20261116T133103Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
-DTSTART;TZID=Europe/London:20270612T140000
-DTEND;TZID=Europe/London:20270612T150000
-RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
-LOCATION:Newquay Library\, Marcus Hill\, Newquay TR7 1BD
+DTSTART;TZID=Europe/London:20270417T140000
+DTEND;TZID=Europe/London:20270417T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270528T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
   turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
  es/libraries/your-local-library/newquay-library-and-information-service/\n
  Last checked: 04 Nov 2026
 URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
  ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:newquay-library-lego-club-4-11-years-saturday-sa-t6@near-here
+DTSTAMP:20261116T133103Z
+SUMMARY:Lego Club (4-11 years\, Saturday)
+DTSTART;TZID=Europe/London:20270612T140000
+DTEND;TZID=Europe/London:20270612T150000
+RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
+LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
+DESCRIPTION:Who it's for: Children and teens\nCost: Free\nHow to join: Just
+  turn up\nSource: https://www.cornwall.gov.uk/libraries-museums-and-archiv
+ es/libraries/your-local-library/newquay-library-and-information-service/\n
+ Last checked: 04 Nov 2026
+URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
+ ur-local-library/newquay-library-and-information-service/
+END:VEVENT
+BEGIN:VEVENT
+UID:the-oasis-newquay-methodist-church-elevate-youth-theatre-mo@near-here
+DTSTAMP:20261116T133103Z
+SUMMARY:Elevate Youth Theatre
+DTSTART;TZID=Europe/London:20261116T161500
+DTEND;TZID=Europe/London:20261116T181500
+RRULE:FREQ=WEEKLY;BYDAY=MO
+LOCATION:The Oasis (Newquay Methodist Church)\, 14 Pargolla Road\, Newquay\
+ , TR7 1RW
+DESCRIPTION:Who it's for: Children and teens\nCost: Not stated\nHow to join
+ : Not stated\nThe source doesn't say whether this runs in school holidays.
+  Check with the venue.\nSource: https://newquaymethodist.org/\nLast checke
+ d: 16 Nov 2026
+URL:https://newquaymethodist.org/
 END:VEVENT
 END:VCALENDAR

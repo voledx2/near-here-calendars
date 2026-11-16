@@ -1,0 +1,22 @@
+Near Here builder v0.3 - build date 2026-11-16
+Sessions in the sheet (not paused): 41 from 5 sources
+Published to calendars: 27
+Held back for fixing: 14 (15 problems)
+Venue warnings: 5 (postcodes checked with postcodes.io)
+Field completeness (10 key fields, 'Not stated' counts as missing): 96%
+Sessions where term-time is known (Yes/No): 4 of 41
+Sessions verified in the last 30 days: 41 of 41
+Zones with live calendars: Crantock, St Columb Minor, Town centre
+Feeds written:
+  crantock-everything.ics  (1 calendar series)
+  crantock-older-people.ics  (1 calendar series)
+  st-columb-minor-everything.ics  (2 calendar series)
+  st-columb-minor-everyone.ics  (1 calendar series)
+  st-columb-minor-older-people.ics  (1 calendar series)
+  town-centre-everything.ics  (28 calendar series)
+  town-centre-adults.ics  (1 calendar series)
+  town-centre-children-and-teens.ics  (7 calendar series)
+  town-centre-everyone.ics  (6 calendar series)
+  town-centre-families-and-under-5s.ics  (2 calendar series)
+  town-centre-older-people.ics  (11 calendar series)
+  town-centre-teens-and-adults.ics  (1 calendar series)
