@@ -26,7 +26,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-u3a-book-club-fr@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:u3a Book Club
 DTSTART;TZID=Europe/London:20261127T143000
 DTEND;TZID=Europe/London:20261127T153000
@@ -40,7 +40,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:sandy-lodge-hotel-u3a-bridge-friday-evening-fr@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:u3a Bridge (Friday evening)
 DTSTART;TZID=Europe/London:20261120T183000
 DTEND;TZID=Europe/London:20261120T203000
@@ -54,7 +54,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-chess-1st-friday-fr@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:u3a Chess (1st Friday)
 DTSTART;TZID=Europe/London:20261204T123000
 DTEND;TZID=Europe/London:20261204T143000
@@ -68,7 +68,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-u3a-chess-3rd-friday-fr@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:u3a Chess (3rd Friday)
 DTSTART;TZID=Europe/London:20261120T123000
 DTEND;TZID=Europe/London:20261120T143000
@@ -82,7 +82,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-fort-inn-u3a-sunday-lunch-su@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:u3a Sunday Lunch
 DTSTART;TZID=Europe/London:20261220T120000
 DTEND;TZID=Europe/London:20261220T140000
@@ -96,7 +96,7 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-technology-and-tea-tu@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:Technology and Tea
 DTSTART;TZID=Europe/London:20261117T100000
 DTEND;TZID=Europe/London:20261117T110000
@@ -115,7 +115,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-knit-and-natter-tu@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:Knit and Natter
 DTSTART;TZID=Europe/London:20261117T130000
 DTEND;TZID=Europe/London:20261117T143000
@@ -134,7 +134,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-memory-hub-th@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:Memory Hub
 DTSTART;TZID=Europe/London:20261119T100000
 DTEND;TZID=Europe/London:20261119T113000
@@ -153,7 +153,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-friday-club-fr@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:Friday Club
 DTSTART;TZID=Europe/London:20261120T100000
 DTEND;TZID=Europe/London:20261120T140000
@@ -172,7 +172,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:govenek-community-hub-age-uk-cornwall-happy-voices-fr@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:Happy Voices
 DTSTART;TZID=Europe/London:20261120T130000
 DTEND;TZID=Europe/London:20261120T140000
@@ -191,7 +191,7 @@ URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-memory-cafe-th@near-here
-DTSTAMP:20261116T173604Z
+DTSTAMP:20261117T104045Z
 SUMMARY:Memory Cafe
 DTSTART;TZID=Europe/London:20261119T140000
 DTEND;TZID=Europe/London:20261119T160000
