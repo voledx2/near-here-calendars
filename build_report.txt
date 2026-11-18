@@ -1,4 +1,4 @@
-Near Here builder v0.3.2 - build date 2026-11-17
+Near Here builder v0.3.2 - build date 2026-11-18
 Calendars run until: 23 Jul 2027
 Sessions in the sheet (not paused): 41 from 5 sources
 Published to calendars: 27
