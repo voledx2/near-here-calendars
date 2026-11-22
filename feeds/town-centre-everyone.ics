@@ -26,10 +26,10 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-chess-club-free-tuition-sa@near-here
-DTSTAMP:20261121T094506Z
+DTSTAMP:20261122T094331Z
 SUMMARY:Chess Club (free tuition)
-DTSTART;TZID=Europe/London:20261121T100000
-DTEND;TZID=Europe/London:20261121T120000
+DTSTART;TZID=Europe/London:20261128T100000
+DTEND;TZID=Europe/London:20261128T120000
 RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
@@ -41,10 +41,10 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-board-games-sa@near-here
-DTSTAMP:20261121T094506Z
+DTSTAMP:20261122T094331Z
 SUMMARY:Board games
-DTSTART;TZID=Europe/London:20261121T100000
-DTEND;TZID=Europe/London:20261121T160000
+DTSTART;TZID=Europe/London:20261128T100000
+DTEND;TZID=Europe/London:20261128T160000
 RRULE:FREQ=WEEKLY;BYDAY=SA;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Everyone\nCost: Free\nHow to join: Just turn up\n
@@ -57,7 +57,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:st-michael-the-archangel-church-newquay-foodbank-st-michael-s-fr@near-h
  ere
-DTSTAMP:20261121T094506Z
+DTSTAMP:20261122T094331Z
 SUMMARY:Newquay Foodbank (St Michael's)
 DTSTART;TZID=Europe/London:20261127T113000
 DTEND;TZID=Europe/London:20261127T140000
@@ -73,7 +73,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-community-showers-tuesday-tu@near-he
  re
-DTSTAMP:20261121T094506Z
+DTSTAMP:20261122T094331Z
 SUMMARY:Community Showers (Tuesday)
 DTSTART;TZID=Europe/London:20261124T140000
 DTEND;TZID=Europe/London:20261124T150000
@@ -88,7 +88,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-community-showers-thursday-th@near-h
  ere
-DTSTAMP:20261121T094506Z
+DTSTAMP:20261122T094331Z
 SUMMARY:Community Showers (Thursday)
 DTSTART;TZID=Europe/London:20261126T113000
 DTEND;TZID=Europe/London:20261126T123000
@@ -102,7 +102,7 @@ URL:https://newquaymethodist.org/
 END:VEVENT
 BEGIN:VEVENT
 UID:the-oasis-newquay-methodist-church-fellowship-friday-fr@near-here
-DTSTAMP:20261121T094506Z
+DTSTAMP:20261122T094331Z
 SUMMARY:Fellowship Friday
 DTSTART;TZID=Europe/London:20261211T190000
 DTEND;TZID=Europe/London:20261211T210000
