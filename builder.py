@@ -1,5 +1,5 @@
 """
-Near Here calendars - builder script v0.3.2 (Week 6)
+Near Here calendars - builder script v0.4 (Week 7)
 
 Reads the Timetable Sheet (a local .xlsx file, or the Google Sheet's
 "Publish to web" .xlsx link), checks every row, sets problem rows aside,
@@ -25,6 +25,16 @@ New in v0.3 (Week 6):
   - v0.3.2: every series has an end date (end of the school year in the Term dates
     tab, or at least six months ahead). Google Calendar would not load the 28-session
     feed while most sessions repeated with no end. The nightly build moves it forward.
+
+New in v0.4 (Week 7):
+  - one page per area (areas/<area>.html) listing every live session by day, with
+    'add to calendar' buttons for iPhone, Google Calendar and Outlook, a copy-link
+    button, and a filter by audience
+  - 'add just this one' calendar file for each session (sessions/<id>.ics)
+  - the home page is now a postcode finder: the visitor types a postcode, the page
+    asks postcodes.io where it is and points to the nearest area with calendars
+  - area centres come from 'Anchor postcode' on the Zones tab (or, if blank, the
+    middle of the area's venues); missing or unknown anchors are listed as warnings
 """
 import csv
 import html
@@ -33,6 +43,8 @@ import re
 import shutil
 import sys
 import tempfile
+import math
+import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
 from difflib import SequenceMatcher
@@ -59,6 +71,7 @@ MIN_HORIZON_DAYS = 183  # series always run at least this far ahead of the build
 TIME_RE = re.compile(r"^([01]\d|2[0-3]):([0-5]\d)$")
 POSTCODE_RE = re.compile(r"^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$", re.I)
 SITE = "https://voledx2.github.io/near-here-calendars/"
+ROAD_COL = "If no sessions, send people to"
 
 
 def slug(text):
@@ -123,17 +136,23 @@ def open_sheet(source):
     return load_workbook(source, data_only=True)
 
 
-def check_postcodes(postcodes):
-    """Ask postcodes.io which postcodes exist. Returns {postcode: True/False}, or None if offline."""
+def lookup_postcodes(postcodes):
+    """Ask postcodes.io where each postcode is.
+    Returns {postcode: (lat, lon)} with None for postcodes that don't exist, or None if offline."""
     if not postcodes:
         return {}
     try:
-        body = json.dumps({"postcodes": sorted(postcodes)}).encode()
-        req = urllib.request.Request("https://api.postcodes.io/postcodes", data=body,
-                                     headers={"Content-Type": "application/json", "User-Agent": "near-here-builder"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            res = json.load(resp)["result"]
-        return {r["query"]: r["result"] is not None for r in res}
+        found = {}
+        todo = sorted(postcodes)
+        for i in range(0, len(todo), 100):  # postcodes.io takes up to 100 at a time
+            body = json.dumps({"postcodes": todo[i:i + 100]}).encode()
+            req = urllib.request.Request("https://api.postcodes.io/postcodes", data=body,
+                                         headers={"Content-Type": "application/json", "User-Agent": "near-here-builder"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                for r in json.load(resp)["result"]:
+                    res = r["result"]
+                    found[r["query"]] = (res["latitude"], res["longitude"]) if res else None
+        return found
     except Exception:
         return None
 
@@ -293,7 +312,7 @@ END:VTIMEZONE""".split("\n")
 
 
 def write_feed(path, title, events):
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.3.2//EN", "CALSCALE:GREGORIAN",
+    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.4//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{ics_escape(title)}", f"X-WR-TIMEZONE:{TZ}",
              "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H"] + VTIMEZONE
     for ev in events:
@@ -302,16 +321,198 @@ def write_feed(path, title, events):
     path.write_text("\r\n".join(fold(l) for l in lines) + "\r\n", encoding="utf-8", newline="")
 
 
-PAGE_STYLE = ("body{font-family:system-ui,sans-serif;max-width:860px;margin:2rem auto;padding:0 16px;line-height:1.6;color:#152430}"
-              "code{background:#eef3f5;padding:2px 5px;border-radius:4px}h2{margin-top:2rem}"
-              "table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d5dee2;padding:6px 8px;text-align:left;vertical-align:top}"
-              "th{background:#e3f2ec}.wrap{overflow-x:auto}")
+PAGE_STYLE = """
+:root{--ink:#14232d;--muted:#52636e;--line:#d6e0e4;--bg:#f7faf9;--card:#fff;--accent:#0b6e5f;--accent-ink:#fff;--soft:#e4f2ee;--warn:#8a5a00}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{max-width:860px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.75rem;line-height:1.2;margin:.2rem 0 .6rem}
+h2{font-size:1.2rem;margin:2rem 0 .6rem}
+h3{font-size:1.05rem;margin:0 0 .2rem}
+p{margin:.4rem 0 .8rem}
+a{color:var(--accent)}
+.lede{color:var(--muted);font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 12px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:.6rem 0 .2rem}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit}
+.btn.alt{background:var(--card);color:var(--accent)}
+.btn.small{padding:6px 10px;font-size:.85rem}
+.meta{color:var(--muted);font-size:.92rem;margin:.1rem 0}
+.tag{display:inline-block;background:var(--soft);border-radius:999px;padding:1px 10px;font-size:.82rem;margin-right:4px}
+.note{color:var(--warn);font-size:.9rem}
+label{font-weight:600;display:block;margin-bottom:6px}
+input[type=text],select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%;max-width:320px;background:#fff;color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.result{margin-top:12px}
+.areas{list-style:none;padding:0;margin:0}
+.areas li{margin:0 0 8px}
+.small{font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--soft)}
+.wrap{overflow-x:auto}
+footer{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:12px}
+"""
 
 
-def page(title, inner):
+def page(title, inner, script=""):
     return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title)}</title>'
-            f'<style>{PAGE_STYLE}</style></head><body>{inner}</body></html>')
+            f'<style>{PAGE_STYLE}</style></head><body><main>{inner}</main>'
+            f'{"<script>" + script + "</script>" if script else ""}</body></html>')
+
+
+def subscribe_links(fname, title):
+    """Links that add a feed in each calendar app. The feed must be online at SITE/feeds/fname."""
+    https = f"{SITE}feeds/{fname}"
+    webcal = "webcal://" + https.split("://", 1)[1]
+    return {
+        "apple": webcal,
+        "google": "https://calendar.google.com/calendar/r?cid=" + urllib.parse.quote(webcal, safe=""),
+        "outlook": "https://outlook.live.com/calendar/0/addfromweb?url=" + urllib.parse.quote(https, safe="")
+                   + "&name=" + urllib.parse.quote(title, safe=""),
+        "https": https,
+    }
+
+
+def how_often_words(r):
+    day, often = r["Day"], r["How often"]
+    words = {"Every week": f"Every {day}", "Every 2 weeks": f"Every other {day}",
+             "1st of the month": f"1st {day} of the month", "2nd of the month": f"2nd {day} of the month",
+             "3rd of the month": f"3rd {day} of the month", "4th of the month": f"4th {day} of the month",
+             "Last of the month": f"Last {day} of the month"}[often]
+    return words
+
+
+def next_dates(r, term_parts, build_date, horizon, count=1):
+    """The next session date(s) on or after the build date, skipping cancelled dates and school holidays."""
+    rule0 = PATTERN[r["How often"]]
+    anchor = as_date(r.get(FIRST_DATE))
+    cancelled = {as_date(p.strip()) for p in str(r.get("Cancelled dates") or "").split(",") if p.strip()}
+    windows = [(max(build_date, anchor or build_date), horizon)]
+    if r["Term-time only"] == "Yes":
+        windows = [(max(a, build_date), b) for a, b in term_parts if b >= build_date]
+    out = []
+    for a, b in windows:
+        d = first_on_or_after(a, r["Day"], rule0, anchor)
+        while d and d <= b and len(out) < count:
+            if d not in cancelled:
+                out.append(d)
+            if rule0.startswith("FREQ=WEEKLY"):
+                d += timedelta(days=14 if "INTERVAL=2" in rule0 else 7)
+            else:
+                nxt = date(d.year + (d.month // 12), d.month % 12 + 1, 1)
+                d = first_on_or_after(nxt, r["Day"], rule0)
+        if len(out) >= count:
+            break
+    return out
+
+
+def area_page(zone, zone_feeds, sessions, built):
+    """One page per area: subscribe buttons (with audience filter) and the sessions by day."""
+    options, data = [], {}
+    for aud, fname, _ in zone_feeds:
+        label = "All sessions" if aud == "Everything" else aud
+        n = sum(1 for s in sessions if aud in ("Everything", s["audience"]))
+        options.append(f'<option value="{html.escape(fname)}">{html.escape(label)} ({n})</option>')
+        data[fname] = subscribe_links(fname, f"Near Here - {zone} - {aud}")
+    first = zone_feeds[0][1]
+    links = data[first]
+    cards = []
+    for day in DAYS:
+        todays = [s for s in sessions if s["day"] == day]
+        if not todays:
+            continue
+        cards.append(f'<h2>{day}s</h2>')
+        for s in sorted(todays, key=lambda x: x["start"]):
+            when = f'{s["start"]}–{s["end"]} · {html.escape(s["often"])}'
+            nxt = f' · next: {s["next"]}' if s["next"] else ""
+            term = ""
+            if s["term"] == "Yes":
+                term = '<p class="meta">School term time only.</p>'
+            elif s["term"] == "Not stated":
+                term = '<p class="note">May not run in school holidays: check with the venue.</p>'
+            place = html.escape(s["venue"])
+            if s["postcode"]:
+                place += (f', <a href="https://www.openstreetmap.org/search?query={urllib.parse.quote(s["postcode"])}">'
+                          f'{html.escape(s["postcode"])}</a>')
+            cards.append(f'''<div class="card" data-aud="{html.escape(s["audience"])}">
+<h3>{html.escape(s["name"])}</h3>
+<p class="meta">{when}{nxt}</p>
+<p class="meta">{place}</p>
+<p><span class="tag">{html.escape(s["audience"])}</span><span class="tag">{html.escape(s["cost"])}</span></p>
+<p class="meta">How to join: {html.escape(s["join"])}</p>{term}
+<div class="btns"><a class="btn small alt" href="../sessions/{s["file"]}">Add just this one</a>
+<a class="btn small alt" href="{html.escape(s["source"])}" rel="noopener">Source (checked {s["checked"]})</a></div>
+</div>''')
+    inner = f'''<p class="small"><a href="../index.html">← Find another area</a></p>
+<h1>{html.escape(zone)}: regular sessions</h1>
+<p class="lede">{len(sessions)} regular sessions in the {html.escape(zone)} area of Newquay. Add them to your phone's calendar once and they stay up to date by themselves.</p>
+<div class="card">
+<label for="aud">Which sessions?</label>
+<select id="aud">{"".join(options)}</select>
+<div class="btns">
+<a class="btn" id="b-apple" href="{links["apple"]}">iPhone or Mac</a>
+<a class="btn" id="b-google" href="{links["google"]}" rel="noopener">Google Calendar</a>
+<a class="btn" id="b-outlook" href="{links["outlook"]}" rel="noopener">Outlook</a>
+<button class="btn alt" id="b-copy" type="button">Copy link</button>
+</div>
+<p class="small" id="copied" aria-live="polite">Android phones: use 'Google Calendar' on a computer or in your phone's browser, then turn the calendar on in the Google Calendar app. Times are UK time.</p>
+</div>
+{"".join(cards)}
+<footer class="small">Rebuilt every night from the Near Here Timetable Sheet; last built {built}. Every session links to where its details came from. Spotted a mistake? Tell the venue or the Near Here team.</footer>'''
+    script = f'''const L={json.dumps(data)};const sel=document.getElementById('aud');
+function show(){{const f=sel.value,l=L[f];document.getElementById('b-apple').href=l.apple;document.getElementById('b-google').href=l.google;document.getElementById('b-outlook').href=l.outlook;
+const aud=sel.options[sel.selectedIndex].text.replace(/ \\(\\d+\\)$/,'');document.querySelectorAll('.card[data-aud]').forEach(c=>{{c.hidden=!(aud==='All sessions'||c.dataset.aud===aud)}});
+document.querySelectorAll('main h2').forEach(h=>{{let n=h.nextElementSibling,any=false;while(n&&n.tagName!=='H2'&&n.tagName!=='FOOTER'){{if(!n.hidden&&n.dataset.aud)any=true;n=n.nextElementSibling}}h.hidden=!any}})}}
+sel.addEventListener('change',show);
+document.getElementById('b-copy').addEventListener('click',async()=>{{const u=L[sel.value].https;const msg=document.getElementById('copied');
+try{{await navigator.clipboard.writeText(u);msg.textContent='Link copied: '+u}}catch(e){{msg.textContent='Copy this link: '+u}}}});'''
+    return page(f"Near Here - {zone}", inner, script)
+
+
+def finder_page(zones_json, live, ready_n, blocked_n, built, has_test):
+    items = "".join(f'<li><a class="btn alt" href="areas/{slug(z)}.html">{html.escape(z)} ({n} sessions)</a></li>'
+                    for z, n in live)
+    test = '<p class="small">Week 3 test feed: <a href="near_here_test_feed.ics">near_here_test_feed.ics</a></p>' if has_test else ""
+    inner = f'''<h1>Near Here: regular sessions near you</h1>
+<p class="lede">Clubs, groups and drop-ins that happen every week or month in Newquay, ready to add to your phone's calendar.</p>
+<div class="card">
+<form id="f" novalidate>
+<label for="pc">Your postcode</label>
+<div class="row"><input type="text" id="pc" name="pc" autocomplete="postal-code" placeholder="e.g. TR7 1BD" inputmode="text">
+<button class="btn" type="submit">Find my area</button></div>
+</form>
+<div class="result" id="out" aria-live="polite"></div>
+<p class="small">Your postcode is looked up with postcodes.io, a free public postcode service. This site does not keep it.</p>
+</div>
+<h2>Or pick an area</h2>
+<ul class="areas">{items or '<li>No areas are live yet.</li>'}</ul>
+<footer class="small">{ready_n} sessions are live. {blocked_n} more are waiting for missing details. Rebuilt every night from the team's Timetable Sheet; last built {built}.
+<br>For the team: <a href="problems.html">problems list</a> · <a href="build_report.txt">build report</a>{test}</footer>'''
+    script = f'''const Z={json.dumps(zones_json)};
+const out=document.getElementById('out');
+function km(a,b,c,d){{const r=x=>x*Math.PI/180,R=6371,dl=r(c-a),dn=r(d-b);const h=Math.sin(dl/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))}}
+function say(h){{out.innerHTML=h}}
+function esc(t){{return String(t).replace(/[&<>"]/g,c=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}})[c])}}
+document.getElementById('f').addEventListener('submit',async e=>{{e.preventDefault();
+const raw=document.getElementById('pc').value.toUpperCase().replace(/\\s+/g,'');
+if(!/^[A-Z]{{1,2}}\\d[A-Z\\d]?(\\d[A-Z]{{2}})?$/.test(raw)){{say('<p>That doesn\\'t look like a UK postcode. Try something like <strong>TR7 1BD</strong>.</p>');return}}
+const full=raw.length>4&&/\\d[A-Z]{{2}}$/.test(raw);
+const url=full?'https://api.postcodes.io/postcodes/'+encodeURIComponent(raw):'https://api.postcodes.io/outcodes/'+encodeURIComponent(raw);
+say('<p>Looking up '+esc(raw)+'…</p>');
+let p;try{{const res=await fetch(url);if(res.status===404){{say('<p>We couldn\\'t find that postcode. Check it, or pick an area below.</p>');return}}p=(await res.json()).result}}catch(err){{say('<p>We couldn\\'t reach the postcode service just now. Please pick an area below.</p>');return}}
+if(!p||p.latitude==null){{say('<p>That postcode has no location on record. Please pick an area below.</p>');return}}
+const ranked=Z.filter(z=>z.lat!=null).map(z=>Object.assign({{d:km(p.latitude,p.longitude,z.lat,z.lon)}},z)).sort((a,b)=>a.d-b.d);
+if(!ranked.length){{say('<p>Please pick an area below.</p>');return}}
+const near=ranked[0];let live=ranked.filter(z=>z.live);
+const road=live.find(z=>z.slug===near.road);if(!near.live&&road)live=[road].concat(live.filter(z=>z!==road));
+if(near.d>15){{say('<p>That postcode is about '+Math.round(near.d)+' km from Newquay, outside the Near Here areas for now.</p>'+(live.length?'<p>The nearest area with calendars is <a class="btn" href="areas/'+live[0].slug+'.html">'+esc(live[0].name)+'</a></p>':''));return}}
+let h='<p>Your nearest area is <strong>'+esc(near.name)+'</strong> (about '+near.d.toFixed(1)+' km away).</p>';
+if(near.live){{h+='<p><a class="btn" href="areas/'+near.slug+'.html">See '+near.sessions+' sessions in '+esc(near.name)+'</a></p>'}}
+else if(live.length){{h+='<p>There are no sessions listed in '+esc(near.name)+' yet. The nearest area with sessions by road is '+esc(live[0].name)+'.</p><p><a class="btn" href="areas/'+live[0].slug+'.html">See '+live[0].sessions+' sessions in '+esc(live[0].name)+'</a></p>'}}
+const shown=near.live?near.slug:(live[0]?live[0].slug:'');const more=live.filter(z=>z.slug!==near.slug&&z.slug!==shown).slice(0,2);
+if(near.live&&more.length)h+='<p class="small">Also close by: '+more.map(z=>'<a href="areas/'+z.slug+'.html">'+esc(z.name)+'</a> ('+z.d.toFixed(1)+' km)').join(', ')+'. Distances are in a straight line.</p>';
+say(h)}});'''
+    return page("Near Here: regular sessions near you", inner, script)
 
 
 def main():
@@ -325,6 +526,11 @@ def main():
         venues[str(v["Venue name"]).strip()] = {"name": str(v["Venue name"]).strip(), "address": v.get("Address"),
                                                 "postcode": (v.get("Postcode") or "").strip().upper(),
                                                 "zone": (v.get("Zone") or "").strip()}
+    zone_rows = read_table(wb["Zones"])
+    zones = [(str(z["Zone"]).strip(), (z.get("Anchor postcode") or "").strip().upper()) for _, z in zone_rows]
+    # Straight-line distance can mislead (e.g. the River Gannel between Pentire and Crantock),
+    # so each area can name the area people should be sent to by road when it has no sessions.
+    by_road = {str(z["Zone"]).strip(): (z.get(ROAD_COL) or "").strip() for _, z in zone_rows}
     term_parts = [(as_date(t["Starts"]), as_date(t["Ends"])) for _, t in read_table(wb["Term dates"])
                   if as_date(t.get("Starts")) and as_date(t.get("Ends"))]
 
@@ -332,35 +538,64 @@ def main():
     # Every series needs an end date: the end of the school year, or at least six months ahead.
     horizon = max([b for _, b in term_parts] + [build_date + timedelta(days=MIN_HORIZON_DAYS)])
 
-    # Venue warnings (don't block publishing, but the team should fix them before Week 7's postcode finder)
+    # Venue and area warnings (don't block publishing)
     warnings = []
     used = {r.get("Venue") for _, r in rows}
-    to_check = {v["postcode"] for n, v in venues.items() if n in used and v["postcode"]}
-    valid = check_postcodes(to_check)
+    to_check = {v["postcode"] for n, v in venues.items() if n in used and v["postcode"]} | {pc for _, pc in zones if pc}
+    where = lookup_postcodes(to_check)
     for n, v in sorted(venues.items()):
         if n not in used:
             continue
         if not v["postcode"]:
-            warnings.append((n, "No postcode", "Add the venue's postcode (needed for the postcode finder)"))
-        elif not POSTCODE_RE.match(v["postcode"]) or (valid is not None and not valid.get(v["postcode"], True)):
+            warnings.append((n, "No postcode", "Add the venue's postcode (shown on the area page and used to place the area)"))
+        elif not POSTCODE_RE.match(v["postcode"]) or (where is not None and where.get(v["postcode"], 1) is None):
             warnings.append((n, f"Postcode '{v['postcode']}' not found", "Check the postcode"))
-    postcode_note = "checked with postcodes.io" if valid is not None else "not checked (postcodes.io unreachable)"
+    postcode_note = "checked with postcodes.io" if where is not None else "not checked (postcodes.io unreachable)"
+
+    # Area centres for the postcode finder: the anchor postcode, or the middle of the area's venues.
+    zone_centre = {}
+    for z, pc in zones:
+        if pc and where and where.get(pc):
+            zone_centre[z] = where[pc]
+            continue
+        if pc and where is not None:
+            warnings.append((f"Area: {z}", f"Anchor postcode '{pc}' not found", "Fix the postcode on the Zones tab"))
+        pts = [where[v["postcode"]] for v in venues.values()
+               if where and v["zone"] == z and v["postcode"] and where.get(v["postcode"])]
+        if pts:
+            zone_centre[z] = (sum(a for a, _ in pts) / len(pts), sum(b for _, b in pts) / len(pts))
+        if not pc:
+            warnings.append((f"Area: {z}", "No anchor postcode", "Add a central postcode on the Zones tab for the postcode finder"))
 
     feeds = {}  # (zone, audience) -> events
+    session_info = {}  # zone -> list of session dicts for the area page
+    for d in ("feeds", "sessions", "areas"):
+        if (outdir / d).exists():
+            shutil.rmtree(outdir / d)  # drop pages and calendars that no longer have any sessions
+        (outdir / d).mkdir(parents=True, exist_ok=True)
     for _, r in ready:
         v = venues[r["Venue"]]
         evs = vevents(r, v, term_parts, build_date, stamp, horizon)
+        if not evs:
+            continue
         for key in ((v["zone"], "Everything"), (v["zone"], r["Audience"])):
             feeds.setdefault(key, []).extend(evs)
+        sid = f"{slug(r['Venue'])}-{slug(r['Session name'])}-{DAY_CODE[r['Day']].lower()}"
+        write_feed(outdir / "sessions" / f"{sid}.ics", r["Session name"], evs)
+        nd = next_dates(r, term_parts, build_date, horizon)
+        verified = as_date(r.get("Last verified"))
+        session_info.setdefault(v["zone"], []).append({
+            "name": r["Session name"], "day": r["Day"], "start": as_time(r["Start"]), "end": as_time(r["End"]),
+            "often": how_often_words(r), "next": nd[0].strftime("%a %d %b").replace(" 0", " ") if nd else "",
+            "venue": v["name"], "postcode": v["postcode"], "audience": r["Audience"],
+            "cost": r.get("Cost") if r.get("Cost") not in (None, "", "Not stated") else "Cost not stated", "join": r.get("How to join") or "Not stated",
+            "term": r["Term-time only"], "source": r["Source link"], "file": f"{sid}.ics",
+            "checked": verified.strftime("%d %b %Y") if verified else "unknown"})
 
-    feeds_dir = outdir / "feeds"
-    if feeds_dir.exists():
-        shutil.rmtree(feeds_dir)  # drop calendars that no longer have any sessions
-    feeds_dir.mkdir(parents=True, exist_ok=True)
     written = []
     for (zone, aud), evs in sorted(feeds.items(), key=lambda kv: (kv[0][0], kv[0][1] != "Everything", kv[0][1])):
         fname = f"{slug(zone)}-{slug(aud)}.ics"
-        write_feed(feeds_dir / fname, f"Near Here - {zone} - {aud}", evs)
+        write_feed(outdir / "feeds" / fname, f"Near Here - {zone} - {aud}", evs)
         written.append((zone, aud, fname, len(evs)))
 
     with open(outdir / "problems.csv", "w", newline="", encoding="utf-8") as f:
@@ -368,6 +603,12 @@ def main():
         w.writerow(["Run date", "Sheet row", "Session", "Problem", "How to fix"])
         for p in problems:
             w.writerow([build_date.isoformat(), *p])
+
+    built = build_date.strftime("%d %b %Y")
+    zones_live = sorted({z for z, _, _, _ in written})
+    for z in zones_live:
+        zf = [(a, fn, n) for zz, a, fn, n in written if zz == z]
+        (outdir / "areas" / f"{slug(z)}.html").write_text(area_page(z, zf, session_info[z], built), encoding="utf-8")
 
     # Data quality summary
     active = [r for _, r in rows if r.get("Status") != "Paused"]
@@ -378,35 +619,33 @@ def main():
     term_known = sum(1 for r in active if r.get("Term-time only") in ("Yes", "No"))
     fresh = sum(1 for r in active if as_date(r.get("Last verified")) and (build_date - as_date(r.get("Last verified"))).days <= 30)
     sources = len({r.get("Source link") for r in active if r.get("Source link")})
-    zones_live = sorted({z for z, _, _, _ in written})
+    zone_names = [z for z, _ in zones] + sorted({v["zone"] for v in venues.values() if v["zone"]} - {z for z, _ in zones})
+    zones_json = [{"name": z, "slug": slug(z), "lat": zone_centre.get(z, (None, None))[0],
+                   "lon": zone_centre.get(z, (None, None))[1], "live": z in zones_live,
+                   "sessions": len(session_info.get(z, [])), "road": slug(by_road.get(z, "")) if by_road.get(z) else ""}
+                  for z in zone_names]
+    placed = sum(1 for z in zones_json if z["lat"] is not None)
     summary = [
-        f"Near Here builder v0.3.2 - build date {build_date.isoformat()}",
+        f"Near Here builder v0.4 - build date {build_date.isoformat()}",
         f"Calendars run until: {horizon.strftime('%d %b %Y')}",
         f"Sessions in the sheet (not paused): {len(active)} from {sources} sources",
         f"Published to calendars: {len(ready)}",
         f"Held back for fixing: {len(blocked_rows)} ({len(problems)} problems)",
-        f"Venue warnings: {len(warnings)} (postcodes {postcode_note})",
+        f"Venue and area warnings: {len(warnings)} (postcodes {postcode_note})",
         f"Field completeness (10 key fields, 'Not stated' counts as missing): {completeness:.0%}",
         f"Sessions where term-time is known (Yes/No): {term_known} of {len(active)}",
         f"Sessions verified in the last 30 days: {fresh} of {len(active)}",
         f"Zones with live calendars: {', '.join(zones_live) or 'none'}",
+        f"Areas placed on the map for the postcode finder: {placed} of {len(zones_json)}",
+        f"Area pages written: {len(zones_live)}; single-session calendar files: {sum(len(v) for v in session_info.values())}",
         "Feeds written:",
     ] + [f"  {fn}  ({n} calendar series)" for _, _, fn, n in written]
     (outdir / "build_report.txt").write_text("\n".join(summary) + "\n", encoding="utf-8")
 
-    built = build_date.strftime("%d %b %Y")
-    by_zone = {}
-    for z, a, fn, n in written:
-        by_zone.setdefault(z, []).append(f'<li><strong>{html.escape(a)}</strong>: <a href="feeds/{fn}">{fn}</a> ({n} series)</li>')
-    zone_html = "".join(f"<h2>{html.escape(z)}</h2><ul>{''.join(items)}</ul>" for z, items in by_zone.items())
-    test_link = '<p>Test feed from Week 3: <a href="near_here_test_feed.ics">near_here_test_feed.ics</a></p>' \
-        if (outdir / "near_here_test_feed.ics").exists() else ""
-    (outdir / "index.html").write_text(page("Near Here calendars", f"""
-<h1>Near Here calendars (proof of concept)</h1>
-<p>Regular community sessions in Newquay, as calendars you can subscribe to. Rebuilt automatically every night from the team's Timetable Sheet; last built {built}. Every session links to its source.</p>
-<p><strong>{len(ready)} sessions</strong> are live in {len(zones_live)} areas. {len(blocked_rows)} more are waiting for missing details (<a href="problems.html">see the problems list</a>).</p>
-<p>To subscribe: copy a link below, then in Google Calendar choose <em>Other calendars &gt; From URL</em>; on iPhone, open the link with <code>webcal://</code> in place of <code>https://</code>.</p>
-{zone_html}{test_link}"""), encoding="utf-8")
+    live = [(z, len(session_info[z])) for z in zones_live]
+    (outdir / "index.html").write_text(
+        finder_page(zones_json, live, len(ready), len(blocked_rows), built, (outdir / "near_here_test_feed.ics").exists()),
+        encoding="utf-8")
 
     prow = "".join(f"<tr><td>{n}</td><td>{html.escape(s)}</td><td>{html.escape(p)}</td><td>{html.escape(f)}</td></tr>" for n, s, p, f in problems)
     wrow = "".join(f"<tr><td>{html.escape(n)}</td><td>{html.escape(p)}</td><td>{html.escape(f)}</td></tr>" for n, p, f in warnings)
@@ -414,9 +653,9 @@ def main():
 <h1>Problems list</h1>
 <p>Built {built}. Sessions below are kept off the calendars until the row is fixed in the Timetable Sheet. Fixes go live the next morning.</p>
 <div class="wrap"><table><tr><th>Sheet row</th><th>Session</th><th>Problem</th><th>How to fix</th></tr>{prow or '<tr><td colspan="4">No problems</td></tr>'}</table></div>
-<h2>Venue warnings</h2><p>These don't stop sessions being published, but need fixing before the postcode finder (Week 7). Postcodes {postcode_note}.</p>
-<div class="wrap"><table><tr><th>Venue</th><th>Warning</th><th>How to fix</th></tr>{wrow or '<tr><td colspan="3">None</td></tr>'}</table></div>
-<p><a href="index.html">Back to the calendars</a></p>"""), encoding="utf-8")
+<h2>Venue and area warnings</h2><p>These don't stop sessions being published. Postcodes {postcode_note}.</p>
+<div class="wrap"><table><tr><th>Venue or area</th><th>Warning</th><th>How to fix</th></tr>{wrow or '<tr><td colspan="3">None</td></tr>'}</table></div>
+<p><a href="index.html">Back to the postcode finder</a></p>"""), encoding="utf-8")
     print("\n".join(summary))
 
 
