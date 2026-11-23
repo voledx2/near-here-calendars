@@ -26,7 +26,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:st-columb-minor-institute-u3a-play-reading-fr@near-here
-DTSTAMP:20261122T094331Z
+DTSTAMP:20261123T104304Z
 SUMMARY:u3a Play Reading
 DTSTART;TZID=Europe/London:20261127T133000
 DTEND;TZID=Europe/London:20261127T160000
@@ -41,7 +41,7 @@ END:VEVENT
 BEGIN:VEVENT
 UID:st-columba-s-church-st-columb-minor-newquay-foodbank-st-columb-minor-tu
  @near-here
-DTSTAMP:20261122T094331Z
+DTSTAMP:20261123T104304Z
 SUMMARY:Newquay Foodbank (St Columb Minor)
 DTSTART;TZID=Europe/London:20261124T100000
 DTEND;TZID=Europe/London:20261124T120000
