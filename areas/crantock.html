@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Near Here - Crantock</title><style>
+:root{--ink:#14232d;--muted:#52636e;--line:#d6e0e4;--bg:#f7faf9;--card:#fff;--accent:#0b6e5f;--accent-ink:#fff;--soft:#e4f2ee;--warn:#8a5a00}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{max-width:860px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.75rem;line-height:1.2;margin:.2rem 0 .6rem}
+h2{font-size:1.2rem;margin:2rem 0 .6rem}
+h3{font-size:1.05rem;margin:0 0 .2rem}
+p{margin:.4rem 0 .8rem}
+a{color:var(--accent)}
+.lede{color:var(--muted);font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 12px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:.6rem 0 .2rem}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit}
+.btn.alt{background:var(--card);color:var(--accent)}
+.btn.small{padding:6px 10px;font-size:.85rem}
+.meta{color:var(--muted);font-size:.92rem;margin:.1rem 0}
+.tag{display:inline-block;background:var(--soft);border-radius:999px;padding:1px 10px;font-size:.82rem;margin-right:4px}
+.note{color:var(--warn);font-size:.9rem}
+label{font-weight:600;display:block;margin-bottom:6px}
+input[type=text],select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%;max-width:320px;background:#fff;color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.result{margin-top:12px}
+.areas{list-style:none;padding:0;margin:0}
+.areas li{margin:0 0 8px}
+.small{font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--soft)}
+.wrap{overflow-x:auto}
+footer{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body><main><p class="small"><a href="../index.html">← Find another area</a></p>
+<h1>Crantock: regular sessions</h1>
+<p class="lede">2 regular sessions in the Crantock area of Newquay. Add them to your phone's calendar once and they stay up to date by themselves.</p>
+<div class="card">
+<label for="aud">Which sessions?</label>
+<select id="aud"><option value="crantock-everything.ics">All sessions (2)</option><option value="crantock-older-people.ics">Older people (2)</option></select>
+<div class="btns">
+<a class="btn" id="b-apple" href="webcal://voledx2.github.io/near-here-calendars/feeds/crantock-everything.ics">iPhone or Mac</a>
+<a class="btn" id="b-google" href="https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fvoledx2.github.io%2Fnear-here-calendars%2Ffeeds%2Fcrantock-everything.ics" rel="noopener">Google Calendar</a>
+<a class="btn" id="b-outlook" href="https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Fvoledx2.github.io%2Fnear-here-calendars%2Ffeeds%2Fcrantock-everything.ics&name=Near%20Here%20-%20Crantock%20-%20Everything" rel="noopener">Outlook</a>
+<button class="btn alt" id="b-copy" type="button">Copy link</button>
+</div>
+<p class="small" id="copied" aria-live="polite">Android phones: use 'Google Calendar' on a computer or in your phone's browser, then turn the calendar on in the Google Calendar app. Times are UK time.</p>
+</div>
+<h2>Mondays</h2><div class="card" data-aud="Older people">
+<h3>u3a Antiques and Collectables</h3>
+<p class="meta">10:15–12:15 · Last Monday of the month · next: Mon 30 Nov</p>
+<p class="meta">Crantock Village Hall, <a href="https://www.openstreetmap.org/search?query=TR8%205RT">TR8 5RT</a></p>
+<p><span class="tag">Older people</span><span class="tag">u3a membership</span></p>
+<p class="meta">How to join: Book ahead</p><p class="note">May not run in school holidays: check with the venue.</p>
+<div class="btns"><a class="btn small alt" href="../sessions/crantock-village-hall-u3a-antiques-and-collectables-mo.ics">Add just this one</a>
+<a class="btn small alt" href="https://newquay.u3asite.uk/groups-weekly-schedule/" rel="noopener">Source (checked 16 Nov 2026)</a></div>
+</div><h2>Fridays</h2><div class="card" data-aud="Older people">
+<h3>u3a Badminton</h3>
+<p class="meta">11:00–12:30 · Every Friday · next: Fri 27 Nov</p>
+<p class="meta">St Newlyn East Village Hall, <a href="https://www.openstreetmap.org/search?query=TR8%205LE">TR8 5LE</a></p>
+<p><span class="tag">Older people</span><span class="tag">u3a membership</span></p>
+<p class="meta">How to join: Book ahead</p><p class="note">May not run in school holidays: check with the venue.</p>
+<div class="btns"><a class="btn small alt" href="../sessions/st-newlyn-east-village-hall-u3a-badminton-fr.ics">Add just this one</a>
+<a class="btn small alt" href="https://newquay.u3asite.uk/groups-weekly-schedule/" rel="noopener">Source (checked 16 Nov 2026)</a></div>
+</div>
+<footer class="small">Rebuilt every night from the Near Here Timetable Sheet; last built 23 Nov 2026. Every session links to where its details came from. Spotted a mistake? Tell the venue or the Near Here team.</footer></main><script>const L={"crantock-everything.ics": {"apple": "webcal://voledx2.github.io/near-here-calendars/feeds/crantock-everything.ics", "google": "https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fvoledx2.github.io%2Fnear-here-calendars%2Ffeeds%2Fcrantock-everything.ics", "outlook": "https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Fvoledx2.github.io%2Fnear-here-calendars%2Ffeeds%2Fcrantock-everything.ics&name=Near%20Here%20-%20Crantock%20-%20Everything", "https": "https://voledx2.github.io/near-here-calendars/feeds/crantock-everything.ics"}, "crantock-older-people.ics": {"apple": "webcal://voledx2.github.io/near-here-calendars/feeds/crantock-older-people.ics", "google": "https://calendar.google.com/calendar/r?cid=webcal%3A%2F%2Fvoledx2.github.io%2Fnear-here-calendars%2Ffeeds%2Fcrantock-older-people.ics", "outlook": "https://outlook.live.com/calendar/0/addfromweb?url=https%3A%2F%2Fvoledx2.github.io%2Fnear-here-calendars%2Ffeeds%2Fcrantock-older-people.ics&name=Near%20Here%20-%20Crantock%20-%20Older%20people", "https": "https://voledx2.github.io/near-here-calendars/feeds/crantock-older-people.ics"}};const sel=document.getElementById('aud');
+function show(){const f=sel.value,l=L[f];document.getElementById('b-apple').href=l.apple;document.getElementById('b-google').href=l.google;document.getElementById('b-outlook').href=l.outlook;
+const aud=sel.options[sel.selectedIndex].text.replace(/ \(\d+\)$/,'');document.querySelectorAll('.card[data-aud]').forEach(c=>{c.hidden=!(aud==='All sessions'||c.dataset.aud===aud)});
+document.querySelectorAll('main h2').forEach(h=>{let n=h.nextElementSibling,any=false;while(n&&n.tagName!=='H2'&&n.tagName!=='FOOTER'){if(!n.hidden&&n.dataset.aud)any=true;n=n.nextElementSibling}h.hidden=!any})}
+sel.addEventListener('change',show);
+document.getElementById('b-copy').addEventListener('click',async()=>{const u=L[sel.value].https;const msg=document.getElementById('copied');
+try{await navigator.clipboard.writeText(u);msg.textContent='Link copied: '+u}catch(e){msg.textContent='Copy this link: '+u}});</script></body></html>

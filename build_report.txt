@@ -1,23 +1,25 @@
-Near Here builder v0.3.2 - build date 2026-11-23
+Near Here builder v0.4 - build date 2026-11-23
 Calendars run until: 23 Jul 2027
 Sessions in the sheet (not paused): 41 from 5 sources
-Published to calendars: 27
-Held back for fixing: 14 (15 problems)
-Venue warnings: 5 (postcodes checked with postcodes.io)
+Published to calendars: 32
+Held back for fixing: 9 (10 problems)
+Venue and area warnings: 1 (postcodes checked with postcodes.io)
 Field completeness (10 key fields, 'Not stated' counts as missing): 96%
 Sessions where term-time is known (Yes/No): 4 of 41
 Sessions verified in the last 30 days: 41 of 41
 Zones with live calendars: Crantock, St Columb Minor, Town centre
+Areas placed on the map for the postcode finder: 6 of 6
+Area pages written: 3; single-session calendar files: 32
 Feeds written:
-  crantock-everything.ics  (1 calendar series)
-  crantock-older-people.ics  (1 calendar series)
-  st-columb-minor-everything.ics  (2 calendar series)
-  st-columb-minor-everyone.ics  (1 calendar series)
+  crantock-everything.ics  (2 calendar series)
+  crantock-older-people.ics  (2 calendar series)
+  st-columb-minor-everything.ics  (3 calendar series)
+  st-columb-minor-everyone.ics  (2 calendar series)
   st-columb-minor-older-people.ics  (1 calendar series)
-  town-centre-everything.ics  (28 calendar series)
+  town-centre-everything.ics  (31 calendar series)
   town-centre-adults.ics  (1 calendar series)
   town-centre-children-and-teens.ics  (7 calendar series)
   town-centre-everyone.ics  (6 calendar series)
   town-centre-families-and-under-5s.ics  (2 calendar series)
-  town-centre-older-people.ics  (11 calendar series)
+  town-centre-older-people.ics  (14 calendar series)
   town-centre-teens-and-adults.ics  (1 calendar series)

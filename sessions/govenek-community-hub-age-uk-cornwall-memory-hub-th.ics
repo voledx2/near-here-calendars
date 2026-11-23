@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Near Here//Builder v0.4//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Memory Hub
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:govenek-community-hub-age-uk-cornwall-memory-hub-th@near-here
+DTSTAMP:20261123T181351Z
+SUMMARY:Memory Hub
+DTSTART;TZID=Europe/London:20261126T100000
+DTEND;TZID=Europe/London:20261126T113000
+RRULE:FREQ=WEEKLY;BYDAY=TH;UNTIL=20270723T235959Z
+LOCATION:Govenek Community Hub (Age UK Cornwall)\, Crantock Street\, Newqua
+ y\, TR7 1JR
+DESCRIPTION:Who it's for: Older people\nCost: £5\nHow to join: Not stated\
+ nThe source doesn't say whether this runs in school holidays. Check with t
+ he venue.\nSource: https://www.ageuk.org.uk/bp-assets/globalassets/cornwal
+ l--the-isles-of-scilly/original-blocks/about-us/latest-news/2025---govenek
+ -launches-new-sessions-and-activities/govenek-hub-activities-timetable-v04
+ -22.07.26.pdf\nLast checked: 16 Nov 2026
+URL:https://www.ageuk.org.uk/bp-assets/globalassets/cornwall--the-isles-of-
+ scilly/original-blocks/about-us/latest-news/2025---govenek-launches-new-se
+ ssions-and-activities/govenek-hub-activities-timetable-v04-22.07.26.pdf
+END:VEVENT
+END:VCALENDAR

@@ -1,6 +1,67 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Near Here calendars</title><style>body{font-family:system-ui,sans-serif;max-width:860px;margin:2rem auto;padding:0 16px;line-height:1.6;color:#152430}code{background:#eef3f5;padding:2px 5px;border-radius:4px}h2{margin-top:2rem}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #d5dee2;padding:6px 8px;text-align:left;vertical-align:top}th{background:#e3f2ec}.wrap{overflow-x:auto}</style></head><body>
-<h1>Near Here calendars (proof of concept)</h1>
-<p>Regular community sessions in Newquay, as calendars you can subscribe to. Rebuilt automatically every night from the team's Timetable Sheet; last built 23 Nov 2026. Every session links to its source.</p>
-<p><strong>27 sessions</strong> are live in 3 areas. 14 more are waiting for missing details (<a href="problems.html">see the problems list</a>).</p>
-<p>To subscribe: copy a link below, then in Google Calendar choose <em>Other calendars &gt; From URL</em>; on iPhone, open the link with <code>webcal://</code> in place of <code>https://</code>.</p>
-<h2>Crantock</h2><ul><li><strong>Everything</strong>: <a href="feeds/crantock-everything.ics">crantock-everything.ics</a> (1 series)</li><li><strong>Older people</strong>: <a href="feeds/crantock-older-people.ics">crantock-older-people.ics</a> (1 series)</li></ul><h2>St Columb Minor</h2><ul><li><strong>Everything</strong>: <a href="feeds/st-columb-minor-everything.ics">st-columb-minor-everything.ics</a> (2 series)</li><li><strong>Everyone</strong>: <a href="feeds/st-columb-minor-everyone.ics">st-columb-minor-everyone.ics</a> (1 series)</li><li><strong>Older people</strong>: <a href="feeds/st-columb-minor-older-people.ics">st-columb-minor-older-people.ics</a> (1 series)</li></ul><h2>Town centre</h2><ul><li><strong>Everything</strong>: <a href="feeds/town-centre-everything.ics">town-centre-everything.ics</a> (28 series)</li><li><strong>Adults</strong>: <a href="feeds/town-centre-adults.ics">town-centre-adults.ics</a> (1 series)</li><li><strong>Children and teens</strong>: <a href="feeds/town-centre-children-and-teens.ics">town-centre-children-and-teens.ics</a> (7 series)</li><li><strong>Everyone</strong>: <a href="feeds/town-centre-everyone.ics">town-centre-everyone.ics</a> (6 series)</li><li><strong>Families and under 5s</strong>: <a href="feeds/town-centre-families-and-under-5s.ics">town-centre-families-and-under-5s.ics</a> (2 series)</li><li><strong>Older people</strong>: <a href="feeds/town-centre-older-people.ics">town-centre-older-people.ics</a> (11 series)</li><li><strong>Teens and adults</strong>: <a href="feeds/town-centre-teens-and-adults.ics">town-centre-teens-and-adults.ics</a> (1 series)</li></ul><p>Test feed from Week 3: <a href="near_here_test_feed.ics">near_here_test_feed.ics</a></p></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Near Here: regular sessions near you</title><style>
+:root{--ink:#14232d;--muted:#52636e;--line:#d6e0e4;--bg:#f7faf9;--card:#fff;--accent:#0b6e5f;--accent-ink:#fff;--soft:#e4f2ee;--warn:#8a5a00}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;margin:0;background:var(--bg);color:var(--ink);line-height:1.55}
+main{max-width:860px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.75rem;line-height:1.2;margin:.2rem 0 .6rem}
+h2{font-size:1.2rem;margin:2rem 0 .6rem}
+h3{font-size:1.05rem;margin:0 0 .2rem}
+p{margin:.4rem 0 .8rem}
+a{color:var(--accent)}
+.lede{color:var(--muted);font-size:1.05rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 12px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:.6rem 0 .2rem}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit}
+.btn.alt{background:var(--card);color:var(--accent)}
+.btn.small{padding:6px 10px;font-size:.85rem}
+.meta{color:var(--muted);font-size:.92rem;margin:.1rem 0}
+.tag{display:inline-block;background:var(--soft);border-radius:999px;padding:1px 10px;font-size:.82rem;margin-right:4px}
+.note{color:var(--warn);font-size:.9rem}
+label{font-weight:600;display:block;margin-bottom:6px}
+input[type=text],select{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;width:100%;max-width:320px;background:#fff;color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.result{margin-top:12px}
+.areas{list-style:none;padding:0;margin:0}
+.areas li{margin:0 0 8px}
+.small{font-size:.88rem;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--soft)}
+.wrap{overflow-x:auto}
+footer{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body><main><h1>Near Here: regular sessions near you</h1>
+<p class="lede">Clubs, groups and drop-ins that happen every week or month in Newquay, ready to add to your phone's calendar.</p>
+<div class="card">
+<form id="f" novalidate>
+<label for="pc">Your postcode</label>
+<div class="row"><input type="text" id="pc" name="pc" autocomplete="postal-code" placeholder="e.g. TR7 1BD" inputmode="text">
+<button class="btn" type="submit">Find my area</button></div>
+</form>
+<div class="result" id="out" aria-live="polite"></div>
+<p class="small">Your postcode is looked up with postcodes.io, a free public postcode service. This site does not keep it.</p>
+</div>
+<h2>Or pick an area</h2>
+<ul class="areas"><li><a class="btn alt" href="areas/crantock.html">Crantock (2 sessions)</a></li><li><a class="btn alt" href="areas/st-columb-minor.html">St Columb Minor (3 sessions)</a></li><li><a class="btn alt" href="areas/town-centre.html">Town centre (27 sessions)</a></li></ul>
+<footer class="small">32 sessions are live. 9 more are waiting for missing details. Rebuilt every night from the team's Timetable Sheet; last built 23 Nov 2026.
+<br>For the team: <a href="problems.html">problems list</a> · <a href="build_report.txt">build report</a><p class="small">Week 3 test feed: <a href="near_here_test_feed.ics">near_here_test_feed.ics</a></p></footer></main><script>const Z=[{"name": "Town centre", "slug": "town-centre", "lat": 50.413359, "lon": -5.081739, "live": true, "sessions": 27, "road": "st-columb-minor"}, {"name": "Pentire", "slug": "pentire", "lat": 50.410914, "lon": -5.108679, "live": false, "sessions": 0, "road": "town-centre"}, {"name": "Porth", "slug": "porth", "lat": 50.424158, "lon": -5.054306, "live": false, "sessions": 0, "road": "town-centre"}, {"name": "St Columb Minor", "slug": "st-columb-minor", "lat": 50.421308, "lon": -5.042253, "live": true, "sessions": 3, "road": "town-centre"}, {"name": "Quintrell Downs", "slug": "quintrell-downs", "lat": 50.404353, "lon": -5.027697, "live": false, "sessions": 0, "road": "st-columb-minor"}, {"name": "Crantock", "slug": "crantock", "lat": 50.399982, "lon": -5.109793, "live": true, "sessions": 2, "road": "town-centre"}];
+const out=document.getElementById('out');
+function km(a,b,c,d){const r=x=>x*Math.PI/180,R=6371,dl=r(c-a),dn=r(d-b);const h=Math.sin(dl/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
+function say(h){out.innerHTML=h}
+function esc(t){return String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c])}
+document.getElementById('f').addEventListener('submit',async e=>{e.preventDefault();
+const raw=document.getElementById('pc').value.toUpperCase().replace(/\s+/g,'');
+if(!/^[A-Z]{1,2}\d[A-Z\d]?(\d[A-Z]{2})?$/.test(raw)){say('<p>That doesn\'t look like a UK postcode. Try something like <strong>TR7 1BD</strong>.</p>');return}
+const full=raw.length>4&&/\d[A-Z]{2}$/.test(raw);
+const url=full?'https://api.postcodes.io/postcodes/'+encodeURIComponent(raw):'https://api.postcodes.io/outcodes/'+encodeURIComponent(raw);
+say('<p>Looking up '+esc(raw)+'…</p>');
+let p;try{const res=await fetch(url);if(res.status===404){say('<p>We couldn\'t find that postcode. Check it, or pick an area below.</p>');return}p=(await res.json()).result}catch(err){say('<p>We couldn\'t reach the postcode service just now. Please pick an area below.</p>');return}
+if(!p||p.latitude==null){say('<p>That postcode has no location on record. Please pick an area below.</p>');return}
+const ranked=Z.filter(z=>z.lat!=null).map(z=>Object.assign({d:km(p.latitude,p.longitude,z.lat,z.lon)},z)).sort((a,b)=>a.d-b.d);
+if(!ranked.length){say('<p>Please pick an area below.</p>');return}
+const near=ranked[0];let live=ranked.filter(z=>z.live);
+const road=live.find(z=>z.slug===near.road);if(!near.live&&road)live=[road].concat(live.filter(z=>z!==road));
+if(near.d>15){say('<p>That postcode is about '+Math.round(near.d)+' km from Newquay, outside the Near Here areas for now.</p>'+(live.length?'<p>The nearest area with calendars is <a class="btn" href="areas/'+live[0].slug+'.html">'+esc(live[0].name)+'</a></p>':''));return}
+let h='<p>Your nearest area is <strong>'+esc(near.name)+'</strong> (about '+near.d.toFixed(1)+' km away).</p>';
+if(near.live){h+='<p><a class="btn" href="areas/'+near.slug+'.html">See '+near.sessions+' sessions in '+esc(near.name)+'</a></p>'}
+else if(live.length){h+='<p>There are no sessions listed in '+esc(near.name)+' yet. The nearest area with sessions by road is '+esc(live[0].name)+'.</p><p><a class="btn" href="areas/'+live[0].slug+'.html">See '+live[0].sessions+' sessions in '+esc(live[0].name)+'</a></p>'}
+const shown=near.live?near.slug:(live[0]?live[0].slug:'');const more=live.filter(z=>z.slug!==near.slug&&z.slug!==shown).slice(0,2);
+if(near.live&&more.length)h+='<p class="small">Also close by: '+more.map(z=>'<a href="areas/'+z.slug+'.html">'+esc(z.name)+'</a> ('+z.d.toFixed(1)+' km)').join(', ')+'. Distances are in a straight line.</p>';
+say(h)});</script></body></html>
