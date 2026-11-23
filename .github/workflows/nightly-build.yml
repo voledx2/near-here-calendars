@@ -34,7 +34,7 @@ jobs:
         run: |
           git config user.name "near-here-builder"
           git config user.email "near-here-builder@users.noreply.github.com"
-          git add -A feeds index.html problems.html problems.csv build_report.txt
+          git add -A feeds areas sessions index.html problems.html problems.csv build_report.txt
           if git diff --cached --quiet; then
             echo "No changes tonight."
           else
