@@ -26,7 +26,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t2@near-here
-DTSTAMP:20261123T181351Z
+DTSTAMP:20261124T122600Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20261128T140000
 DTEND;TZID=Europe/London:20261128T150000
@@ -41,7 +41,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t3@near-here
-DTSTAMP:20261123T181351Z
+DTSTAMP:20261124T122600Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270109T140000
 DTEND;TZID=Europe/London:20270109T150000
@@ -56,7 +56,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t4@near-here
-DTSTAMP:20261123T181351Z
+DTSTAMP:20261124T122600Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270227T140000
 DTEND;TZID=Europe/London:20270227T150000
@@ -71,7 +71,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t5@near-here
-DTSTAMP:20261123T181351Z
+DTSTAMP:20261124T122600Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270417T140000
 DTEND;TZID=Europe/London:20270417T150000
@@ -86,7 +86,7 @@ URL:https://www.cornwall.gov.uk/libraries-museums-and-archives/libraries/yo
 END:VEVENT
 BEGIN:VEVENT
 UID:newquay-library-lego-club-4-11-years-saturday-sa-t6@near-here
-DTSTAMP:20261123T181351Z
+DTSTAMP:20261124T122600Z
 SUMMARY:Lego Club (4-11 years\, Saturday)
 DTSTART;TZID=Europe/London:20270612T140000
 DTEND;TZID=Europe/London:20270612T150000
