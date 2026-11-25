@@ -27,10 +27,10 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:st-columba-s-church-st-columb-minor-newquay-foodbank-st-columb-minor-tu
  @near-here
-DTSTAMP:20261124T122600Z
+DTSTAMP:20261125T111413Z
 SUMMARY:Newquay Foodbank (St Columb Minor)
-DTSTART;TZID=Europe/London:20261124T100000
-DTEND;TZID=Europe/London:20261124T120000
+DTSTART;TZID=Europe/London:20261201T100000
+DTEND;TZID=Europe/London:20261201T120000
 RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270723T235959Z
 LOCATION:St Columba's Church\, St Columb Minor\, St Columb Minor\, Newquay\
  , TR7 3EY

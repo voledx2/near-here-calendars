@@ -26,10 +26,10 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:newquay-library-story-time-stories-rhymes-and-crafts-tu@near-here
-DTSTAMP:20261124T122600Z
+DTSTAMP:20261125T111413Z
 SUMMARY:Story-Time (stories\, rhymes and crafts)
-DTSTART;TZID=Europe/London:20261124T100000
-DTEND;TZID=Europe/London:20261124T103000
+DTSTART;TZID=Europe/London:20261201T100000
+DTEND;TZID=Europe/London:20261201T103000
 RRULE:FREQ=WEEKLY;BYDAY=TU;UNTIL=20270723T235959Z
 LOCATION:Newquay Library\, Marcus Hill\, Newquay\, TR7 1BD
 DESCRIPTION:Who it's for: Families and under 5s\nCost: Not stated\nHow to j
