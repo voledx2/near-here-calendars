@@ -27,7 +27,7 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:st-columb-church-st-columb-major-newquay-foodbank-st-columb-major-sa@ne
  ar-here
-DTSTAMP:20261125T111413Z
+DTSTAMP:20261126T105008Z
 SUMMARY:Newquay Foodbank (St Columb Major)
 DTSTART;TZID=Europe/London:20261128T100000
 DTEND;TZID=Europe/London:20261128T120000
