@@ -1,4 +1,4 @@
-Near Here builder v0.4 - build date 2026-11-27
+Near Here builder v0.5 - build date 2026-11-28
 Calendars run until: 23 Jul 2027
 Sessions in the sheet (not paused): 41 from 5 sources
 Published to calendars: 32
@@ -10,6 +10,7 @@ Sessions verified in the last 30 days: 41 of 41
 Zones with live calendars: Crantock, St Columb Minor, Town centre
 Areas placed on the map for the postcode finder: 6 of 6
 Area pages written: 3; single-session calendar files: 32
+Printable QR posters: 4
 Feeds written:
   crantock-everything.ics  (2 calendar series)
   crantock-older-people.ics  (2 calendar series)

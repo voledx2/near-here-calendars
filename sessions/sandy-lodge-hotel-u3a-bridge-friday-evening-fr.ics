@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.4//EN
+PRODID:-//Near Here//Builder v0.5//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:u3a Bridge (Friday evening)
@@ -26,10 +26,10 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:sandy-lodge-hotel-u3a-bridge-friday-evening-fr@near-here
-DTSTAMP:20261127T104826Z
+DTSTAMP:20261128T075729Z
 SUMMARY:u3a Bridge (Friday evening)
-DTSTART;TZID=Europe/London:20261127T183000
-DTEND;TZID=Europe/London:20261127T203000
+DTSTART;TZID=Europe/London:20261204T183000
+DTEND;TZID=Europe/London:20261204T203000
 RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270723T235959Z
 LOCATION:Sandy Lodge Hotel\, 6-8 Hilgrove Road\, Newquay\, TR7 2QY
 DESCRIPTION:Who it's for: Older people\nCost: u3a membership\nHow to join: 

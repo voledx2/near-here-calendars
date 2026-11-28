@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Near Here//Builder v0.4//EN
+PRODID:-//Near Here//Builder v0.5//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Near Here - Crantock - Older people
@@ -26,7 +26,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:crantock-village-hall-u3a-antiques-and-collectables-mo@near-here
-DTSTAMP:20261127T104826Z
+DTSTAMP:20261128T075729Z
 SUMMARY:u3a Antiques and Collectables
 DTSTART;TZID=Europe/London:20261130T101500
 DTEND;TZID=Europe/London:20261130T121500
@@ -40,10 +40,10 @@ URL:https://newquay.u3asite.uk/groups-weekly-schedule/
 END:VEVENT
 BEGIN:VEVENT
 UID:st-newlyn-east-village-hall-u3a-badminton-fr@near-here
-DTSTAMP:20261127T104826Z
+DTSTAMP:20261128T075729Z
 SUMMARY:u3a Badminton
-DTSTART;TZID=Europe/London:20261127T110000
-DTEND;TZID=Europe/London:20261127T123000
+DTSTART;TZID=Europe/London:20261204T110000
+DTEND;TZID=Europe/London:20261204T123000
 RRULE:FREQ=WEEKLY;BYDAY=FR;UNTIL=20270723T235959Z
 LOCATION:St Newlyn East Village Hall\, Neeham Road\, St Newlyn East\, TR8 5
  LE
