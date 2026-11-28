@@ -1,5 +1,5 @@
 """
-Near Here calendars - builder script v0.4 (Week 7)
+Near Here calendars - builder script v0.5 (Week 8)
 
 Reads the Timetable Sheet (a local .xlsx file, or the Google Sheet's
 "Publish to web" .xlsx link), checks every row, sets problem rows aside,
@@ -35,6 +35,14 @@ New in v0.4 (Week 7):
     asks postcodes.io where it is and points to the nearest area with calendars
   - area centres come from 'Anchor postcode' on the Zones tab (or, if blank, the
     middle of the area's venues); missing or unknown anchors are listed as warnings
+
+New in v0.5 (Week 8):
+  - printable A4 QR posters (posters/<area>.html), one for each area with live
+    sessions, plus a general poster (posters/newquay.html) whose QR code opens
+    the postcode finder; posters/index.html lists them for the team
+  - QR codes are drawn as SVG by the 'segno' library; if it is missing the
+    build still runs and simply skips the posters
+  - the finder says 'under 1 km away' instead of 'about 0.0 km away'
 """
 import csv
 import html
@@ -312,7 +320,7 @@ END:VTIMEZONE""".split("\n")
 
 
 def write_feed(path, title, events):
-    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.4//EN", "CALSCALE:GREGORIAN",
+    lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Near Here//Builder v0.5//EN", "CALSCALE:GREGORIAN",
              "METHOD:PUBLISH", f"X-WR-CALNAME:{ics_escape(title)}", f"X-WR-TIMEZONE:{TZ}",
              "REFRESH-INTERVAL;VALUE=DURATION:PT12H", "X-PUBLISHED-TTL:PT12H"] + VTIMEZONE
     for ev in events:
@@ -487,7 +495,7 @@ def finder_page(zones_json, live, ready_n, blocked_n, built, has_test):
 <h2>Or pick an area</h2>
 <ul class="areas">{items or '<li>No areas are live yet.</li>'}</ul>
 <footer class="small">{ready_n} sessions are live. {blocked_n} more are waiting for missing details. Rebuilt every night from the team's Timetable Sheet; last built {built}.
-<br>For the team: <a href="problems.html">problems list</a> · <a href="build_report.txt">build report</a>{test}</footer>'''
+<br>For the team: <a href="problems.html">problems list</a> · <a href="build_report.txt">build report</a> · <a href="posters/index.html">printable posters</a>{test}</footer>'''
     script = f'''const Z={json.dumps(zones_json)};
 const out=document.getElementById('out');
 function km(a,b,c,d){{const r=x=>x*Math.PI/180,R=6371,dl=r(c-a),dn=r(d-b);const h=Math.sin(dl/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(dn/2)**2;return 2*R*Math.asin(Math.sqrt(h))}}
@@ -506,13 +514,107 @@ if(!ranked.length){{say('<p>Please pick an area below.</p>');return}}
 const near=ranked[0];let live=ranked.filter(z=>z.live);
 const road=live.find(z=>z.slug===near.road);if(!near.live&&road)live=[road].concat(live.filter(z=>z!==road));
 if(near.d>15){{say('<p>That postcode is about '+Math.round(near.d)+' km from Newquay, outside the Near Here areas for now.</p>'+(live.length?'<p>The nearest area with calendars is <a class="btn" href="areas/'+live[0].slug+'.html">'+esc(live[0].name)+'</a></p>':''));return}}
-let h='<p>Your nearest area is <strong>'+esc(near.name)+'</strong> (about '+near.d.toFixed(1)+' km away).</p>';
+const far=near.d<1?'under 1 km away':'about '+near.d.toFixed(1)+' km away';let h='<p>Your nearest area is <strong>'+esc(near.name)+'</strong> ('+far+').</p>';
 if(near.live){{h+='<p><a class="btn" href="areas/'+near.slug+'.html">See '+near.sessions+' sessions in '+esc(near.name)+'</a></p>'}}
 else if(live.length){{h+='<p>There are no sessions listed in '+esc(near.name)+' yet. The nearest area with sessions by road is '+esc(live[0].name)+'.</p><p><a class="btn" href="areas/'+live[0].slug+'.html">See '+live[0].sessions+' sessions in '+esc(live[0].name)+'</a></p>'}}
 const shown=near.live?near.slug:(live[0]?live[0].slug:'');const more=live.filter(z=>z.slug!==near.slug&&z.slug!==shown).slice(0,2);
 if(near.live&&more.length)h+='<p class="small">Also close by: '+more.map(z=>'<a href="areas/'+z.slug+'.html">'+esc(z.name)+'</a> ('+z.d.toFixed(1)+' km)').join(', ')+'. Distances are in a straight line.</p>';
 say(h)}});'''
     return page("Near Here: regular sessions near you", inner, script)
+
+
+POSTER_STYLE = """
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+@media print{html,body{height:296mm;overflow:hidden}}
+html,body{margin:0;background:#fff;color:#14232d;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.sheet{width:210mm;height:296mm;padding:16mm 16mm 30mm;position:relative;overflow:hidden;break-after:avoid}
+.band{background:#0b6e5f;color:#fff;border-radius:6mm;padding:9mm 10mm 8mm}
+.brand{font-size:12pt;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.9;margin:0 0 3mm}
+h1{font-size:34pt;line-height:1.05;margin:0}
+.where{font-size:17pt;margin:3mm 0 0;font-weight:600}
+.mid{display:flex;gap:10mm;align-items:center;margin:10mm 0 6mm}
+.qr{flex:0 0 92mm}
+.qr svg{width:92mm;height:92mm;display:block}
+.steps{flex:1;font-size:15pt;line-height:1.35;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;margin:0 0 6mm;padding-left:13mm;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-.5mm;width:9mm;height:9mm;border-radius:50%;background:#0b6e5f;color:#fff;font-weight:700;font-size:13pt;display:flex;align-items:center;justify-content:center}
+.free{font-size:13pt;color:#52636e;margin:0 0 6mm}
+.list{border-top:1.2mm solid #e4f2ee;padding-top:5mm;font-size:13.5pt;line-height:1.45}
+.list h2{font-size:14pt;margin:0 0 2mm}
+.list ul{margin:0;padding-left:6mm}
+.foot{position:absolute;left:16mm;right:16mm;bottom:10mm;font-size:10.5pt;color:#52636e;border-top:.3mm solid #d6e0e4;padding-top:3mm}
+.url{font-weight:700;color:#14232d;word-break:break-all}
+@media screen{body{background:#e9eeec}.sheet{margin:10mm auto;background:#fff;box-shadow:0 1mm 6mm rgba(0,0,0,.15)}}
+"""
+
+
+def qr_svg(url):
+    """The QR code as inline SVG, or None if the segno library isn't installed."""
+    try:
+        import segno
+    except ImportError:
+        return None
+    return segno.make(url, error="m").svg_inline(dark="#14232d", border=4, omitsize=True)
+
+
+def poster_page(title, where, url, qr, items, items_title, built):
+    lis = "".join(f"<li>{html.escape(i)}</li>" for i in items)
+    short = url.replace("https://", "")
+    return (f'<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            f'<meta name="viewport" content="width=device-width, initial-scale=1"><title>{html.escape(title + " - " + where)}</title>'
+            f'<style>{POSTER_STYLE}</style></head><body><div class="sheet">'
+            f'<div class="band"><p class="brand">Near Here</p><h1>{html.escape(title)}</h1><p class="where">{html.escape(where)}</p></div>'
+            f'<div class="mid"><div class="qr" role="img" aria-label="QR code for {html.escape(short)}">{qr}</div>'
+            f'<ol class="steps"><li>Point your phone camera at the code.</li>'
+            f'<li>Tap the button for your phone: iPhone or Google Calendar.</li>'
+            f'<li>Done. New and changed sessions appear in your calendar by themselves.</li></ol></div>'
+            f'<p class="free">Free. No app and no sign-up. You can remove it from your calendar at any time.</p>'
+            f'<div class="list"><h2>{html.escape(items_title)}</h2><ul>{lis}</ul></div>'
+            f'<div class="foot">No camera? Type <span class="url">{html.escape(short)}</span><br>'
+            f'Details come from the organisers\' own listings and are checked by the Near Here team. Printed from the build of {built}.</div>'
+            f'</div></body></html>')
+
+
+def pick_examples(sessions, n=6):
+    """A short, varied list of sessions for a poster: one per audience first, then the rest."""
+    chosen, seen = [], set()
+    for s in sessions:
+        if s["audience"] not in seen:
+            chosen.append(s); seen.add(s["audience"])
+    for s in sessions:
+        if s not in chosen:
+            chosen.append(s)
+    out = [f'{s["name"]}: {s["often"]}, {s["start"]}' for s in chosen[:n]]
+    if len(sessions) > n:
+        out.append(f"and {len(sessions) - n} more")
+    return out
+
+
+def write_posters(outdir, zones_live, session_info, built):
+    """One A4 poster per live area plus a general one. Returns the number written, or 0 if QR codes can't be made."""
+    if qr_svg(SITE) is None:
+        return 0
+    made = []
+    for z in zones_live:
+        url = f"{SITE}areas/{slug(z)}.html"
+        ss = session_info[z]
+        page_html = poster_page("Regular sessions near you", f"{z}, Newquay", url, qr_svg(url),
+                                pick_examples(ss), f"{len(ss)} regular sessions, including:", built)
+        (outdir / "posters" / f"{slug(z)}.html").write_text(page_html, encoding="utf-8")
+        made.append((f"{slug(z)}.html", f"{z} ({len(ss)} sessions)"))
+    items = [f"{z}: {len(session_info[z])} sessions" for z in zones_live]
+    gen = poster_page("Regular clubs and groups near you", "Newquay and nearby villages", SITE, qr_svg(SITE),
+                      items + ["Type your postcode to find your nearest area"], "Areas with sessions so far:", built)
+    (outdir / "posters" / "newquay.html").write_text(gen, encoding="utf-8")
+    made.append(("newquay.html", "General poster (opens the postcode finder)"))
+    rows = "".join(f'<li><a href="{f}">{html.escape(t)}</a></li>' for f, t in made)
+    (outdir / "posters" / "index.html").write_text(page("Near Here posters", f"""
+<h1>Printable posters</h1>
+<p>Open a poster and print it on A4 (in the print settings choose 'Fit to page' off, margins 'None' if offered). Each QR code opens the page named on the poster, so a printed poster never needs reprinting when sessions change.</p>
+<ul>{rows}</ul>
+<p class="small">Last built {built}. <a href="../index.html">Back to the postcode finder</a></p>"""), encoding="utf-8")
+    return len(made)
 
 
 def main():
@@ -569,7 +671,7 @@ def main():
 
     feeds = {}  # (zone, audience) -> events
     session_info = {}  # zone -> list of session dicts for the area page
-    for d in ("feeds", "sessions", "areas"):
+    for d in ("feeds", "sessions", "areas", "posters"):
         if (outdir / d).exists():
             shutil.rmtree(outdir / d)  # drop pages and calendars that no longer have any sessions
         (outdir / d).mkdir(parents=True, exist_ok=True)
@@ -610,6 +712,8 @@ def main():
         zf = [(a, fn, n) for zz, a, fn, n in written if zz == z]
         (outdir / "areas" / f"{slug(z)}.html").write_text(area_page(z, zf, session_info[z], built), encoding="utf-8")
 
+    posters = write_posters(outdir, zones_live, session_info, built)
+
     # Data quality summary
     active = [r for _, r in rows if r.get("Status") != "Paused"]
     blocked_rows = sorted({p[0] for p in problems})
@@ -626,7 +730,7 @@ def main():
                   for z in zone_names]
     placed = sum(1 for z in zones_json if z["lat"] is not None)
     summary = [
-        f"Near Here builder v0.4 - build date {build_date.isoformat()}",
+        f"Near Here builder v0.5 - build date {build_date.isoformat()}",
         f"Calendars run until: {horizon.strftime('%d %b %Y')}",
         f"Sessions in the sheet (not paused): {len(active)} from {sources} sources",
         f"Published to calendars: {len(ready)}",
@@ -638,6 +742,7 @@ def main():
         f"Zones with live calendars: {', '.join(zones_live) or 'none'}",
         f"Areas placed on the map for the postcode finder: {placed} of {len(zones_json)}",
         f"Area pages written: {len(zones_live)}; single-session calendar files: {sum(len(v) for v in session_info.values())}",
+        f"Printable QR posters: {posters}" + ("" if posters else " (segno not installed, posters skipped)"),
         "Feeds written:",
     ] + [f"  {fn}  ({n} calendar series)" for _, _, fn, n in written]
     (outdir / "build_report.txt").write_text("\n".join(summary) + "\n", encoding="utf-8")
